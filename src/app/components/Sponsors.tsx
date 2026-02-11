@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
-import obamaFoundationLogo from "figma:asset/c765af3d8366941d8c4bbc789d42f7b0d0e6179f.png";
+import obamaFoundationLogo from "@/asset/c765af3d8366941d8c4bbc789d42f7b0d0e6179f.png";
 
 export function Sponsors() {
   const sponsors = [

@@ -1,7 +1,7 @@
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
-import ourStoryImage from "figma:asset/e13647f9efd3b92a70f9fda5571933702150ac28.png";
-import mandaImage from "figma:asset/c3fb5af5eb9b460f4206a2cc93c7b7f159a5893c.png";
-import kwameImage from "figma:asset/0781dbd8f8e47b7b7a2635ca5190583ab69776e2.png";
+import ourStoryImage from "@/asset/e13647f9efd3b92a70f9fda5571933702150ac28.png";
+import mandaImage from "@/asset/c3fb5af5eb9b460f4206a2cc93c7b7f159a5893c.png";
+import kwameImage from "@/asset/0781dbd8f8e47b7b7a2635ca5190583ab69776e2.png";
 
 export function OurStory() {
   return (
