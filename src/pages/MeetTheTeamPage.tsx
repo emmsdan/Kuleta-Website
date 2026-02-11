@@ -1,12 +1,12 @@
 import { Linkedin, Mail } from "lucide-react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
-import amaraImage from "@/asset/f023eede0d58ad39ef886df4299294f1c3e4312c.png";
-import judithImage from "@/asset/4279e38172a19781e32b3d1f3a65bdbe7652f897.png";
-import olanikeImage from "@/asset/4b34ba07de50be7b560ee8392808eb7f2d76cb2f.png";
-import kwameImage from "@/asset/c7d1bb3e8f67677f0deb4a6a2c30dc037e0fd354.png";
-import nabilaImage from "@/asset/cf177e722a650ccf5451db513c3a0761bb79a899.png";
-import yusufImage from "@/asset/aeea507adca44462f8989b624b16f88b3e856282.png";
-import ximenaImage from "@/asset/081f0117dce9c6a10008a481f034134e7a2a02e9.png";
+import amaraImage from "@/assets/f023eede0d58ad39ef886df4299294f1c3e4312c.png";
+import judithImage from "@/assets/4279e38172a19781e32b3d1f3a65bdbe7652f897.png";
+import olanikeImage from "@/assets/4b34ba07de50be7b560ee8392808eb7f2d76cb2f.png";
+import kwameImage from "@/assets/c7d1bb3e8f67677f0deb4a6a2c30dc037e0fd354.png";
+import nabilaImage from "@/assets/cf177e722a650ccf5451db513c3a0761bb79a899.png";
+import yusufImage from "@/assets/aeea507adca44462f8989b624b16f88b3e856282.png";
+import ximenaImage from "@/assets/081f0117dce9c6a10008a481f034134e7a2a02e9.png";
 
 interface TeamMember {
   name: string;

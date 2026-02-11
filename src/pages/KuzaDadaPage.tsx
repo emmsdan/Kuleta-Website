@@ -1,6 +1,6 @@
 import { Button } from "@/app/components/ui/button";
 import { Play, Award, BookOpen, Users, TrendingUp } from "lucide-react";
-import kuzaDadaImage from "@/asset/29d4542c8b108e0389991c23b1a793f7d500fb00.png";
+import kuzaDadaImage from "@/assets/29d4542c8b108e0389991c23b1a793f7d500fb00.png";
 
 export function KuzaDadaPage() {
   const programs = [

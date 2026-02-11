@@ -2,7 +2,7 @@ import { ShoppingCart, User, Menu, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
-import kuletaLogo from "@/asset/5e98c01aef652a24d8b46d28069814fdee46a433.png";
+import kuletaLogo from "@/assets/5e98c01aef652a24d8b46d28069814fdee46a433.png";
 
 interface HeaderProps {
   cartItemCount: number;
