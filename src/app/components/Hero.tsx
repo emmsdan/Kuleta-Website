@@ -1,8 +1,8 @@
 import { Search } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
-import heroImage from "figma:asset/8726d5e6ffba4ae21af7897c6a167c91a610b0a3.png";
-import backgroundImage from "figma:asset/b968a02aa95c98f64d11bb742ce5b76a609a84a9.png";
+import heroImage from "@/asset/8726d5e6ffba4ae21af7897c6a167c91a610b0a3.png";
+import backgroundImage from "@/asset/b968a02aa95c98f64d11bb742ce5b76a609a84a9.png";
 
 export function Hero() {
   return (
