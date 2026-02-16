@@ -3,6 +3,29 @@ import ourStoryImage from "@/assets/e13647f9efd3b92a70f9fda5571933702150ac28.png
 import mandaImage from "@/assets/c3fb5af5eb9b460f4206a2cc93c7b7f159a5893c.png";
 import kwameImage from "@/assets/0781dbd8f8e47b7b7a2635ca5190583ab69776e2.png";
 
+const CO_FOUNDERS = [
+  {
+    name: "Manda Bwerevu",
+    title: "Co-Founder & CEO",
+    titleColorClassName: "text-[#177F00]",
+    cardGradientClassName: "from-gray-50 to-yellow-50",
+    image: mandaImage,
+    imageAlt: "Manda Bwerevu",
+    bio:
+      "Manda leads Kuleta's vision, strategy, and customer growth. Raised across Africa and the United States, his lived experience navigating multiple cultures shaped Kuleta's demand-driven foundation. He brings experience across global supply chains, public policy, and entrepreneurship, with a focus on building scalable platforms that solve real consumer pain points. Manda holds graduate degrees from Harvard University and the University of Chicago, bringing expertise in areas of Education Policy, International Development, Social Entrepreneurship, and others. At Kuleta, he focuses on customer experience, diaspora engagement, and building a networked platform that feels as authentic as it is intentional.",
+  },
+  {
+    name: "Judith",
+    title: "Co-Founder & COO",
+    titleColorClassName: "text-[#E99C00]",
+    cardGradientClassName: "from-gray-50 to-green-50",
+    image: kwameImage,
+    imageAlt: "Judith",
+    bio:
+      "Judith leads Kuleta's operations, vendor partnerships, and program execution. Born and raised in Kenya, her lived experience working within informal and emerging market economies shaped Kuleta's operational backbone and commitment to quality and trust. She brings over a decade of experience across finance, public policy, and enterprise development, with a proven ability to help entrepreneurs and small businesses to operate sustainably and scale with confidence. In addition to many other degrees, Judith holds a PhD in Finance and a Master's degree in Banking, bringing deep expertise in financial systems and market access. As Chief Operating Officer at Kuleta, she focuses on operational excellence, vendor enablement, and ensuring that Kuleta's platform reflects both the integrity and standards of the markets it serves.",
+  },
+];
+
 export function OurStory() {
   return (
     <section className="bg-white py-16">
@@ -47,37 +70,26 @@ export function OurStory() {
 
           {/* Co-founders */}
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Co-founder 1 */}
-            <div className="flex gap-4 items-start p-6 bg-gradient-to-br from-gray-50 to-yellow-50 rounded-xl">
-              <ImageWithFallback
-                src={mandaImage}
-                alt="Manda Bwerevu"
-                className="w-24 h-24 rounded-full object-cover flex-shrink-0"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900">Manda Bwerevu</h3>
-                <p className="text-sm text-[#177F00] mb-2">Co-Founder & CEO</p>
-                <p className="text-sm text-gray-600">
-                  Manda leads Kuleta's vision, strategy, and customer growth. Raised across Africa and the United States, his lived experience navigating multiple cultures shaped Kuleta's demand-driven foundation. He brings experience across global supply chains, public policy, and entrepreneurship, with a focus on building scalable platforms that solve real consumer pain points. Manda holds graduate degrees from Harvard University and the University of Chicago, bringing expertise in areas of Education Policy, International Development, Social Entrepreneurship, and others. At Kuleta, he focuses on customer experience, diaspora engagement, and building a networked platform that feels as authentic as it is intentional.
-                </p>
+            {CO_FOUNDERS.map((coFounder) => (
+              <div
+                key={coFounder.name}
+                className={`flex gap-4 items-start p-6 bg-gradient-to-br ${coFounder.cardGradientClassName} rounded-xl relative`}
+              >
+                <ImageWithFallback
+                  src={coFounder.image}
+                  alt={coFounder.imageAlt}
+                  className="w-24 h-24 rounded-full object-cover flex-shrink-0"
+                />
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900">{coFounder.name}</h3>
+                  <p className={`text-sm ${coFounder.titleColorClassName} mb-2`}>
+                    {coFounder.title}
+                  </p>
+                  <p className="text-sm max-sm:opacity-0">{coFounder.bio}</p>
+                  <p className="absolute top-35 left-10 right-10 text-sm text-gray-600 sm:hidden">{coFounder.bio}</p>
+                </div>
               </div>
-            </div>
-
-            {/* Co-founder 2 */}
-            <div className="flex gap-4 items-start p-6 bg-gradient-to-br from-gray-50 to-green-50 rounded-xl">
-              <ImageWithFallback
-                src={kwameImage}
-                alt="Judith"
-                className="w-24 h-24 rounded-full object-cover flex-shrink-0"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900">Judith</h3>
-                <p className="text-sm text-[#E99C00] mb-2">Co-Founder & COO</p>
-                <p className="text-sm text-gray-600">
-                  Judith leads Kuleta's operations, vendor partnerships, and program execution. Born and raised in Kenya, her lived experience working within informal and emerging market economies shaped Kuleta's operational backbone and commitment to quality and trust. She brings over a decade of experience across finance, public policy, and enterprise development, with a proven ability to help entrepreneurs and small businesses to operate sustainably and scale with confidence. In addition to many other degrees, Judith holds a PhD in Finance and a Master's degree in Banking, bringing deep expertise in financial systems and market access. As Chief Operating Officer at Kuleta, she focuses on operational excellence, vendor enablement, and ensuring that Kuleta's platform reflects both the integrity and standards of the markets it serves.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

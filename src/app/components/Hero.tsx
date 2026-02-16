@@ -17,8 +17,8 @@ export function Hero() {
           />
           
           {/* Left: Headline */}
-          <div className="space-y-6 relative z-10 mt-[200px]">
-            <h1 className="md:text-7xl leading-tight text-center text-[96px]">
+          <div className="space-y-6 relative z-10 sm:mt-[200px]">
+            <h1 className="md:text-7xl leading-tight text-center text-7xl">
               Bringing the local{" "}
               <span className="bg-gradient-to-r from-[#177F00] to-[#E99C00] bg-clip-text text-transparent">
                 African Market
