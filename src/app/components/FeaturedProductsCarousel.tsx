@@ -49,7 +49,7 @@ export function FeaturedProductsCarousel({
     <div className="relative">
       <Slider ref={sliderRef} {...settings}>
         {products.map((product) => (
-          <div key={product.id} className="px-4">
+          <div key={product.id} className="max-sm:min-w-[300px] px-4">
             <ProductCard product={product} onAddToCart={onAddToCart} />
           </div>
         ))}
