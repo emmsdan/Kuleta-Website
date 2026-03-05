@@ -1,5 +1,10 @@
 import { Linkedin } from "lucide-react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import thereseImage from "@/assets/images/therese-kayikwamba-wagner.png";
+import kennethAsherImage from "@/assets/images/kenneth-asher.png";
+import ericMbomaImage from "@/assets/images/eric-mboma.png";
+import ashveenaGajeeleeImage from "@/assets/images/ashveena-gajeelee.png";
+import chrisFolayanImage from "@/assets/images/chris-folayan.png";
 
 interface Advisor {
   name: string;
@@ -17,40 +22,40 @@ export function AdvisoryBoardPage() {
       title: "Minister of Foreign Affairs",
       company: "Democratic Republic of the Congo",
       bio: "Therese brings deep diplomatic, policy, and economic development experience with a focus on Africa's global engagement. Her leadership includes high-level international cooperation, trade, and investment advocacy, making her a key strategic voice on Africa-U.S. relations.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGEbm0TFuhbVg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702822237302?e=1770854400&v=beta&t=Q06scLJV14jC9T9Oonk2mSsW7kaeGh9YecUlO7_onmg",
-      linkedin: "#",
+      image: thereseImage,
+      linkedin: "https://www.linkedin.com/in/therese-kayikwamba-wagner/",
     },
     {
       name: "Kenneth Asher",
       title: "President",
       company: "Kasher Capital",
       bio: "Kenneth's expertise spans venture finance, impact investing, and growth-stage advisory. With a strong background in social enterprise acceleration, he helps Kuleta align business models with investor-ready financial frameworks and measurable social impact.",
-      image: "https://media.licdn.com/dms/image/v2/C4D03AQGVVERU5Q4fgQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1608269362196?e=1770854400&v=beta&t=IMYAIHkfDtzjd_lbV1CykP28-ThAyN2aaFxDDA779lI",
-      linkedin: "#",
+      image: kennethAsherImage,
+      linkedin: "https://www.linkedin.com/in/kenneth-asher/",
     },
     {
       name: "Eric Mboma",
       title: "CEO",
       company: "EFGH Bank - Africa",
       bio: "With 20+ years of leadership across global financial and strategic growth operations in America, Europe, Asia, and Africa, Eric is a proven steward of value creation and organizational transformation. He also actively supports initiatives in healthcare and education for vulnerable communities.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQEs3H_IQb446g/profile-displayphoto-crop_800_800/B4DZsUAij7H4AI-/0/1765567246188?e=1770854400&v=beta&t=3Fr1D67NV-nzxlBlqxJ3IMdjIC4yzdcNipxlIosurBI",
-      linkedin: "#",
+      image: ericMbomaImage,
+      linkedin: "https://www.linkedin.com/in/eric-mboma/",
     },
     {
       name: "Ashveena Gajeelee",
       title: "Founder and CEO",
       company: "Veritas Quest",
       bio: "Ashveena has extensive experience in international development, ESG strategy, and sustainable trade. Her insight into global development policy and inclusive growth ensures Kuleta remains aligned with global ESG trends and development goals.",
-      image: "https://beed.global/wp-content/uploads/2024/09/ashveena-gajeelee-1024x1024.jpg",
-      linkedin: "#",
+      image: ashveenaGajeeleeImage,
+      linkedin: "https://www.linkedin.com/in/agajeelee/",
     },
     {
       name: "Chris Folayan",
       title: "Entrepreneur",
       company: "",
       bio: "A seasoned founder and investor, Chris built and scaled MallforAfrica to become one of the continent's most recognizable cross-border e-commerce platforms. Now advising Kuleta, he brings firsthand insights into African marketplace growth, logistics, and scalability strategies.",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQE7lqHaYe_q6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695189235268?e=1770854400&v=beta&t=CxLVMJyZnXJ5dT9rAb9TrZdwZAskytRyx9s7bewmb-A",
-      linkedin: "#",
+      image: chrisFolayanImage,
+      linkedin: "https://www.linkedin.com/in/chris-folayan/",
     },
     {
       name: "Nenye Njoku",
@@ -58,7 +63,7 @@ export function AdvisoryBoardPage() {
       company: "US Pharmacopeia",
       bio: "PMI-certified project management leader with 12+ years of experience managing global health and sustainable infrastructure programs. Proven track record of driving operational excellence and managing donor-funded portfolios. Recognized for cultivating cross-sector partnerships that strengthen health systems across Africa, Asia, and the Pacific. A trusted collaborator with executive leadership, governments, and international organizations; fluent in English with professional proficiency in French.",
       image: "https://media.licdn.com/dms/image/v2/D4E03AQHycKRz3fBM9A/profile-displayphoto-crop_800_800/B4EZnlkYWSGYAI-/0/1760493144274?e=1770854400&v=beta&t=bFEV5h4_ZiMwmWSaXu0IK0fJu-FXM4t8lTaY8a2i-xQ",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/nenye-njoku-msc-pmp-74455054/",
     },
   ];
 

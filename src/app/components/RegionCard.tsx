@@ -9,7 +9,7 @@ interface RegionCardProps {
 
 export function RegionCard({ region, image, onClick, comingSoon }: RegionCardProps) {
   return (
-    <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-[#177F00] transition-all group">
+    <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-[#177F00] transition-all group min-w-[250px]">
       <div className="relative h-64 mb-4 rounded-lg overflow-hidden">
         <img
           src={image}

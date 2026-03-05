@@ -4,7 +4,7 @@ import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
 import { KULETA_SHOP_BASE_URL } from "@/app/config";
 import { useState } from "react";
-import kuletaLogo from "@/assets/5e98c01aef652a24d8b46d28069814fdee46a433.png";
+import kuletaLogo from "@/assets/logo.png";
 
 interface HeaderProps {
   cartItemCount: number;
@@ -24,9 +24,7 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
   
   const dropdownItems = [
     { label: "Shop", path: KULETA_SHOP_BASE_URL },
-    { label: "Categories", path: "/#categories" },
-    { label: "Featured Products", path: "/#featured-products" },
-    { label: "About", path: "/about" },
+    { label: "Join Our Newsletter", path: "/get-involved" },
     { label: "Meet the Team", path: "/team" },
     { label: "Advisory Board", path: "/advisory-board" },
     { label: "FAQ", path: "/faq" }
@@ -35,7 +33,7 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
   const handleSearch = () => {
     const encodedQuery = encodeURIComponent(searchQuery.trim());
     const searchUrl = encodedQuery
-      ? `${KULETA_SHOP_BASE_URL}/search?q=${encodedQuery}`
+      ? `${KULETA_SHOP_BASE_URL}/search?keyword=${encodedQuery}&q=${encodedQuery}`
       : KULETA_SHOP_BASE_URL;
 
     window.open(searchUrl, "_blank", "noopener,noreferrer");
@@ -81,7 +79,7 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <img src={kuletaLogo} alt="Kuleta Inc" className="h-8 w-auto object-contain" />
+              <img src={kuletaLogo} alt="Kuleta Inc" className="h-8 w-auto object-contain mix-blend-multiply dark:mix-blend-lighten" />
             </Link>
           </div>
 

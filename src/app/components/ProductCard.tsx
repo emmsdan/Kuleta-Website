@@ -14,7 +14,14 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
     <Card className="group overflow-hidden hover:shadow-xl hover:border-[#177F00] transition-all w-full">
       <div className="relative aspect-square overflow-hidden bg-gray-100">
         <img
-          src={product.image}
+          src={
+            
+                  product.cover_image ||
+                  product.banner ||
+                  product.icon ||
+                  product.image ||
+                  "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                }
           alt={product.name}
           className="h-full w-full object-cover transition-transform group-hover:scale-105"
         />

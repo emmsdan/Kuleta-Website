@@ -1,5 +1,6 @@
 import { Button } from "@/app/components/ui/button";
 import { Play, Award, BookOpen, Users, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import kuzaDadaImage from "@/assets/29d4542c8b108e0389991c23b1a793f7d500fb00.png";
 
 export function KuzaDadaPage() {
@@ -82,9 +83,11 @@ export function KuzaDadaPage() {
                 every woman has the potential to build a thriving business and transform her
                 community.
               </p>
-              <Button className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg">
-                Get Involved
-              </Button>
+              <Link to="/get-involved">
+                <Button className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg">
+                  Get Involved
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -204,9 +207,11 @@ export function KuzaDadaPage() {
               there's a place for you in the Kuza Dada community.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg">
-                Get Involved
-              </Button>
+              <Link to="/get-involved">
+                <Button className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg">
+                  Get Involved
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
