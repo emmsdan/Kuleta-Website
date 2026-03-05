@@ -2,6 +2,8 @@ import { ShoppingCart, User, Menu, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
+import { KULETA_SHOP_BASE_URL } from "@/app/config";
+import { useState } from "react";
 import kuletaLogo from "@/assets/5e98c01aef652a24d8b46d28069814fdee46a433.png";
 
 interface HeaderProps {
@@ -10,21 +12,34 @@ interface HeaderProps {
 }
 
 export function Header({ cartItemCount, onCartClick }: HeaderProps) {
+  const [searchQuery, setSearchQuery] = useState("");
+
   const menuItems = [
     { label: "Home", path: "/" },
-    { label: "Shop", path: "/" },
+    { label: "Shop", path: KULETA_SHOP_BASE_URL },
     { label: "About Us", path: "/about" },
     { label: "Kuza Dada", path: "/kuza-dada" },
     { label: "Contact", path: "/contact" }
   ];
   
   const dropdownItems = [
-    { label: "Shop", path: "/" },
-    { label: "Join Our Newsletter", path: "/waitlist" },
+    { label: "Shop", path: KULETA_SHOP_BASE_URL },
+    { label: "Categories", path: "/#categories" },
+    { label: "Featured Products", path: "/#featured-products" },
+    { label: "About", path: "/about" },
     { label: "Meet the Team", path: "/team" },
     { label: "Advisory Board", path: "/advisory-board" },
     { label: "FAQ", path: "/faq" }
   ];
+
+  const handleSearch = () => {
+    const encodedQuery = encodeURIComponent(searchQuery.trim());
+    const searchUrl = encodedQuery
+      ? `${KULETA_SHOP_BASE_URL}/search?q=${encodedQuery}`
+      : KULETA_SHOP_BASE_URL;
+
+    window.open(searchUrl, "_blank", "noopener,noreferrer");
+  };
   
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b backdrop-blur-sm bg-white/90">
@@ -41,6 +56,17 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
               {/* Dropdown Items */}
               <div className="absolute left-0 top-full mt-0 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
                 {dropdownItems.map((item) => (
+                  item.path.startsWith("http") ? (
+                  <a
+                    key={item.label}
+                    href={item.path}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#177F00]/10 hover:to-[#E99C00]/10 hover:text-[#177F00] transition-colors first:rounded-t-lg last:rounded-b-lg"
+                  >
+                    {item.label}
+                  </a>
+                  ) : (
                   <Link
                     key={item.label}
                     to={item.path}
@@ -48,28 +74,41 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
                   >
                     {item.label}
                   </Link>
+                  )
                 ))}
               </div>
             </div>
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <img src={kuletaLogo} alt="Kuleta Inc" className="h-8 w-auto mix-blend-darken" />
+              <img src={kuletaLogo} alt="Kuleta Inc" className="h-8 w-auto object-contain" />
             </Link>
           </div>
 
           {/* Center Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {menuItems.map((item, index) => (
-              <Link
-                key={item.label}
-                to={item.path}
-                className={`text-gray-700 hover:text-[#177F00] transition-colors relative pb-1 ${
-                  index === 0 ? 'after:content-[""] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gradient-to-r after:from-[#177F00] after:to-[#E99C00]' : ''
-                }`}
-              >
-                {item.label}
-              </Link>
+              item.path.startsWith("http") ? (
+                <a
+                  key={item.label}
+                  href={item.path}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-700 hover:text-[#177F00] transition-colors relative pb-1"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className={`text-gray-700 hover:text-[#177F00] transition-colors relative pb-1 ${
+                    index === 0 ? 'after:content-[""] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gradient-to-r after:from-[#177F00] after:to-[#E99C00]' : ''
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -80,10 +119,17 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
               <Input
                 type="text"
                 placeholder="Find product you like"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") {
+                    handleSearch();
+                  }
+                }}
                 className="pl-10 border-gray-300 focus-visible:ring-[#177F00] rounded-full h-10"
               />
             </div>
-            <Button className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white rounded-full px-6">
+            <Button onClick={handleSearch} className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white rounded-full px-6">
               Search
             </Button>
           </div>
@@ -94,6 +140,7 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
               variant="ghost"
               size="icon"
               className="text-gray-700 hover:text-[#177F00]"
+              onClick={() => window.open(`${KULETA_SHOP_BASE_URL}/users/login`, "_blank", "noopener,noreferrer")}
             >
               <User className="h-5 w-5" />
             </Button>
