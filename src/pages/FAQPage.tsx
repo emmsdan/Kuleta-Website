@@ -136,12 +136,6 @@ export function FAQPage() {
             <p className="text-gray-600 mb-4">Looking for something else?</p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="/waitlist"
-                className="px-6 py-2 bg-gradient-to-r from-[#177F00] to-[#E99C00] text-white rounded-full hover:shadow-lg transition-shadow"
-              >
-                Join Waitlist
-              </a>
-              <a
                 href="/team"
                 className="px-6 py-2 border border-[#177F00] text-[#177F00] rounded-full hover:bg-[#177F00] hover:text-white transition-colors"
               >

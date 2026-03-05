@@ -1,5 +1,6 @@
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { Target, Heart, Globe, Key, Clock, DollarSign } from "lucide-react";
+import { KULETA_SHOP_BASE_URL } from "@/app/config";
 import mandaImage from "@/assets/c3fb5af5eb9b460f4206a2cc93c7b7f159a5893c.png";
 import judithImage from "@/assets/0781dbd8f8e47b7b7a2635ca5190583ab69776e2.png";
 
@@ -236,16 +237,12 @@ export function AboutUsPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/"
+              href={KULETA_SHOP_BASE_URL}
+              target="_blank"
+              rel="noreferrer"
               className="px-8 py-3 bg-gradient-to-r from-[#177F00] to-[#E99C00] text-white rounded-full hover:shadow-lg transition-shadow"
             >
               Start Shopping
-            </a>
-            <a
-              href="/waitlist"
-              className="px-8 py-3 border-2 border-[#177F00] text-[#177F00] rounded-full hover:bg-[#177F00] hover:text-white transition-colors"
-            >
-              Become a Vendor
             </a>
           </div>
         </div>

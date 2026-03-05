@@ -85,20 +85,20 @@ export function Sponsors() {
             <h3 className="bg-gradient-to-r from-[#177F00] to-[#E99C00] bg-clip-text text-transparent text-sm uppercase tracking-wider mb-6 text-center font-semibold">
               Partnered with
             </h3>
-            <div className="h-[200px] overflow-hidden">
+            <div className="h-[400px] overflow-hidden">
               <Slider {...carouselSettings}>
                 {partners.map((partner, index) => (
                   <div key={`${partner}-${index}`} className="px-2">
                     {partner.type === "image" ? (
-                      <div className="h-12 bg-transparent rounded flex items-center justify-center transition-all cursor-pointer my-2 px-4">
+                      <div className="h-20 bg-transparent rounded flex items-center justify-center transition-all cursor-pointer my-2 px-4">
                         <ImageWithFallback
                           src={partner.logo}
                           alt={partner.name}
-                          className="max-h-10 max-w-full object-contain"
+                          className="max-h-20 max-w-full object-contain"
                         />
                       </div>
                     ) : (
-                      <div className="h-12 bg-transparent rounded flex items-center justify-center text-gray-600 transition-colors cursor-pointer my-2">
+                      <div className="h-20 bg-transparent rounded flex items-center justify-center text-gray-600 transition-colors cursor-pointer my-2">
                         {partner}
                       </div>
                     )}
@@ -113,20 +113,20 @@ export function Sponsors() {
             <h3 className="bg-gradient-to-r from-[#177F00] to-[#E99C00] bg-clip-text text-transparent text-sm uppercase tracking-wider mb-6 text-center font-semibold">
               Featured in
             </h3>
-            <div className="h-[200px]">
+            <div className="h-[400px]">
               <Slider {...carouselSettings}>
                 {featured.map((media, index) => (
                   <div key={`${media}-${index}`} className="px-2">
                     {media.type === "image" ? (
-                      <div className="h-12 bg-transparent rounded flex items-center justify-center transition-all cursor-pointer my-2 px-4">
+                      <div className="h-20 bg-transparent rounded flex items-center justify-center transition-all cursor-pointer my-2 px-4">
                         <ImageWithFallback
                           src={media.logo}
                           alt={media.name}
-                          className="max-h-10 max-w-full object-contain"
+                          className="max-h-20 max-w-full object-contain"
                         />
                       </div>
                     ) : (
-                      <div className="h-12 bg-transparent rounded flex items-center justify-center text-gray-600 transition-colors cursor-pointer my-2">
+                      <div className="h-20 bg-transparent rounded flex items-center justify-center text-gray-600 transition-colors cursor-pointer my-2">
                         {media}
                       </div>
                     )}

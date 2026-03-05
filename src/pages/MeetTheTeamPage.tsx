@@ -107,7 +107,7 @@ export function MeetTheTeamPage() {
                         className="p-2 rounded-full bg-gradient-to-r from-green-50 to-yellow-50 hover:from-green-100 hover:to-yellow-100 transition-colors"
                         aria-label={`${member.name}'s LinkedIn`}
                       >
-                        <Linkedin className="w-4 h-4 text-[#177F00]" />
+                        <Linkedin className="w-5 h-5 text-[#177F00]" />
                       </a>
                     )}
                     {member.email && (
@@ -116,7 +116,7 @@ export function MeetTheTeamPage() {
                         className="p-2 rounded-full bg-gradient-to-r from-green-50 to-yellow-50 hover:from-green-100 hover:to-yellow-100 transition-colors"
                         aria-label={`Email ${member.name}`}
                       >
-                        <Mail className="w-4 h-4 text-[#177F00]" />
+                        <Mail className="w-5 h-5 text-[#177F00]" />
                       </a>
                     )}
                   </div>

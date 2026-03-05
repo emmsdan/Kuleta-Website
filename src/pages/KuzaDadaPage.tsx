@@ -3,6 +3,8 @@ import { Play, Award, BookOpen, Users, TrendingUp } from "lucide-react";
 import kuzaDadaImage from "@/assets/29d4542c8b108e0389991c23b1a793f7d500fb00.png";
 
 export function KuzaDadaPage() {
+  const videoUrl = import.meta.env.VITE_KUZADADA_VIDEO_URL;
+
   const programs = [
     {
       icon: BookOpen,
@@ -44,7 +46,16 @@ export function KuzaDadaPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Video/Image */}
-            <div className="relative h-[400px] bg-gradient-to-br from-green-100 to-yellow-100 rounded-2xl overflow-hidden group cursor-pointer">
+            <button
+              type="button"
+              onClick={() => {
+                if (videoUrl) {
+                  window.open(videoUrl, "_blank", "noopener,noreferrer");
+                }
+              }}
+              className="relative h-[400px] bg-gradient-to-br from-green-100 to-yellow-100 rounded-2xl overflow-hidden group cursor-pointer w-full text-left"
+              aria-label="Play Kuza Dada video"
+            >
               <img
                 src={kuzaDadaImage}
                 alt="Kuza Dada"
@@ -55,7 +66,7 @@ export function KuzaDadaPage() {
                   <Play className="h-10 w-10 text-[#177F00] ml-1" />
                 </div>
               </div>
-            </div>
+            </button>
 
             {/* Right: Hero Text */}
             <div className="space-y-6">
@@ -72,7 +83,7 @@ export function KuzaDadaPage() {
                 community.
               </p>
               <Button className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg">
-                Join the Movement
+                Get Involved
               </Button>
             </div>
           </div>
@@ -194,19 +205,7 @@ export function KuzaDadaPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg">
-                Apply to Join
-              </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-[#177F00] text-[#177F00] hover:bg-[#177F00] hover:text-white px-8 py-6 text-lg rounded-full"
-              >
-                Become a Mentor
-              </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-[#E99C00] text-[#E99C00] hover:bg-[#E99C00] hover:text-white px-8 py-6 text-lg rounded-full"
-              >
-                Donate
+                Get Involved
               </Button>
             </div>
           </div>

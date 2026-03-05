@@ -1,4 +1,5 @@
 import { Linkedin } from "lucide-react";
+import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 
 interface Advisor {
   name: string;
@@ -80,7 +81,7 @@ export function AdvisoryBoardPage() {
                 className="bg-gradient-to-b from-white to-gray-50 rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-all group"
               >
                 <div className="aspect-square overflow-hidden bg-gray-200">
-                  <img
+                  <ImageWithFallback
                     src={advisor.image}
                     alt={advisor.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -97,7 +98,7 @@ export function AdvisoryBoardPage() {
                       className="inline-flex items-center gap-2 text-sm text-[#177F00] hover:text-[#E99C00] transition-colors"
                       aria-label={`${advisor.name}'s LinkedIn`}
                     >
-                      <Linkedin className="w-4 h-4" />
+                      <Linkedin className="w-5 h-5" />
                       <span>Connect</span>
                     </a>
                   )}
