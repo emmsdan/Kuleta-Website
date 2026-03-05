@@ -15,10 +15,17 @@ import { Toaster } from "@/app/components/ui/sonner";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
 import { Instagram, Linkedin } from "lucide-react";
-import { CONTACT_EMAIL, KULETA_SHOP_BASE_URL, SOCIAL_LINKS } from "@/app/config";
-import { getCategoriesWithFallback, getHomeCategoriesWithFallback, getProductsWithFallback } from "@/app/lib/catalog-api";
+import {
+  CONTACT_EMAIL,
+  KULETA_SHOP_BASE_URL,
+  SOCIAL_LINKS,
+} from "@/app/config";
+import {
+  getCategoriesWithFallback,
+  getHomeCategoriesWithFallback,
+  getProductsWithFallback,
+} from "@/app/lib/catalog-api";
 import kuletaLogo from "@/assets/logo.png";
-
 
 export default function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -50,7 +57,7 @@ export default function App() {
   }, []);
 
   const handleAddToCart = (product: Product) => {
-    window.location.href = `${KULETA_SHOP_BASE_URL}/search?/product/${encodeURIComponent(product.slug || String(product.id))}`;
+    window.location.href = `${KULETA_SHOP_BASE_URL}/${product.slug ? "" : "search?"}product/${(product.slug || String(product.id))}`;
     return;
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id);
@@ -59,7 +66,7 @@ export default function App() {
         return prevItems.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
+            : item,
         );
       }
       toast.success("Added to cart");
@@ -73,9 +80,7 @@ export default function App() {
       return;
     }
     setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, quantity } : item
-      )
+      prevItems.map((item) => (item.id === id ? { ...item, quantity } : item)),
     );
   };
 
@@ -103,9 +108,15 @@ export default function App() {
       <div className="min-h-screen bg-white">
         <Header
           cartItemCount={totalItems}
-          onCartClick={() => window.open(`${KULETA_SHOP_BASE_URL}/cart`, "_blank", "noopener,noreferrer")}
+          onCartClick={() =>
+            window.open(
+              `${KULETA_SHOP_BASE_URL}/cart`,
+              "_blank",
+              "noopener,noreferrer",
+            )
+          }
         />
-        
+
         <Routes>
           <Route
             path="/"
@@ -133,22 +144,62 @@ export default function App() {
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <span className="text-white text-4xl font-bold tracking-[0.3em] mix-blend-screen text-[32px]">
-                    <img src={kuletaLogo} alt="Kuleta Inc" className="h-8 w-auto object-contain mix-blend-multiply dark:mix-blend-lighten" />
+                    <img
+                      src={kuletaLogo}
+                      alt="Kuleta Inc"
+                      className="h-8 w-auto object-contain mix-blend-multiply dark:mix-blend-lighten"
+                    />
                   </span>
                 </div>
                 <p className="text-white/80 text-sm text-center">
                   Bringing the local African Market to the world
                 </p>
               </div>
-              
+
               {/* Shop Column */}
               <div>
                 <h3 className="mb-4 text-white">Shop</h3>
                 <ul className="space-y-2 text-sm text-white/80">
-                  <li><a href="#" onClick={(event) => { event.preventDefault(); window.open(KULETA_SHOP_BASE_URL, "_blank", "noopener,noreferrer"); }} className="hover:text-[#E99C00] transition-colors">Shop</a></li>
-                  <li><a href="/#categories" className="hover:text-[#E99C00] transition-colors">Categories</a></li>
-                  <li><a href="/#featured-products" className="hover:text-[#E99C00] transition-colors">Featured Products</a></li>
-                  <li><a href="/about" className="hover:text-[#E99C00] transition-colors">About</a></li>
+                  <li>
+                    <a
+                      href="#"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        window.open(
+                          KULETA_SHOP_BASE_URL,
+                          "_blank",
+                          "noopener,noreferrer",
+                        );
+                      }}
+                      className="hover:text-[#E99C00] transition-colors"
+                    >
+                      Shop
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#categories"
+                      className="hover:text-[#E99C00] transition-colors"
+                    >
+                      Categories
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#featured-products"
+                      className="hover:text-[#E99C00] transition-colors"
+                    >
+                      Featured Products
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/about"
+                      className="hover:text-[#E99C00] transition-colors"
+                    >
+                      About
+                    </a>
+                  </li>
                 </ul>
               </div>
 
@@ -156,7 +207,14 @@ export default function App() {
               <div>
                 <h3 className="mb-4 text-white">Contact</h3>
                 <ul className="space-y-2 text-sm text-white/80">
-                  <li><a href="/contact" className="hover:text-[#E99C00] transition-colors">Contact</a></li>
+                  <li>
+                    <a
+                      href="/contact"
+                      className="hover:text-[#E99C00] transition-colors"
+                    >
+                      Contact
+                    </a>
+                  </li>
                 </ul>
               </div>
 
@@ -171,20 +229,37 @@ export default function App() {
                     onChange={(event) => setNewsletterEmail(event.target.value)}
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                   />
-                  <Button type="submit" className="bg-gradient-to-r from-[#E99C00] to-[#d48a00] hover:from-[#E99C00]/90 hover:to-[#d48a00]/90 text-white">
+                  <Button
+                    type="submit"
+                    className="bg-gradient-to-r from-[#E99C00] to-[#d48a00] hover:from-[#E99C00]/90 hover:to-[#d48a00]/90 text-white"
+                  >
                     Subscribe
                   </Button>
                 </form>
                 <div className="flex gap-3 mt-4">
-                  <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-white/80 hover:text-[#E99C00] transition-colors">
+                  <a
+                    href={SOCIAL_LINKS.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-white/80 hover:text-[#E99C00] transition-colors"
+                  >
                     <Instagram className="h-5 w-5" />
                   </a>
-                  <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-white/80 hover:text-[#E99C00] transition-colors">
+                  <a
+                    href={SOCIAL_LINKS.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-white/80 hover:text-[#E99C00] transition-colors"
+                  >
                     <Linkedin className="h-5 w-5" />
                   </a>
                 </div>
                 <p className="mt-4 text-xs text-white/70">
-                  For media and support, email us at <a className="underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+                  For media and support, email us at{" "}
+                  <a className="underline" href={`mailto:${CONTACT_EMAIL}`}>
+                    {CONTACT_EMAIL}
+                  </a>
+                  .
                 </p>
               </div>
             </div>
