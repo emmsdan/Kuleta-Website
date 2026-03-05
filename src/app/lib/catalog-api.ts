@@ -79,6 +79,20 @@ export async function getCategoriesWithFallback(): Promise<CatalogLoadResult> {
     };
   }
 }
+export async function getProductsWithFallback(): Promise<CatalogLoadResult> {
+  try {
+    const response = await fetchJson<ApiListResponse<Category>>(`${KULETA_API_BASE_URL}/categories?parent_id=0`);
+    return {
+      categories: response.data,
+      source: "api",
+    };
+  } catch {
+    return {
+      categories: mockStore.products,
+      source: "mock",
+    };
+  }
+}
 
 export function getCategoryShopUrl(category: Category): string {
   return `${KULETA_SHOP_BASE_URL}/category/${encodeURIComponent(category.slug || String(category.id))}`;

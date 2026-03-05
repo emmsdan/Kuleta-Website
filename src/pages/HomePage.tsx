@@ -36,7 +36,7 @@ export function HomePage({ products, categories, onAddToCart }: HomePageProps) {
               Shop Now
             </a>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto overflow-y-auto pb-9">
             {categories.slice(0, 4).map((category) => (
               <RegionCard
                 key={category.id}
@@ -58,7 +58,7 @@ export function HomePage({ products, categories, onAddToCart }: HomePageProps) {
       <section id="featured-products" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl text-center mb-12">Featured Products</h2>
-          <FeaturedProductsCarousel products={products.slice(0, 6)} onAddToCart={onAddToCart} />
+          <FeaturedProductsCarousel products={products.slice(0, 10)} onAddToCart={onAddToCart} />
         </div>
       </section>
 

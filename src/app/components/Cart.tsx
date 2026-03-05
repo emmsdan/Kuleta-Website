@@ -2,7 +2,6 @@ import { Button } from "@/app/components/ui/button";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
 } from "@/app/components/ui/sheet";
@@ -28,9 +27,6 @@ export function Cart({ isOpen, onClose, items, onUpdateQuantity, onRemoveItem }:
       <SheetContent className="w-full sm:max-w-lg flex flex-col">
         <SheetHeader>
           <SheetTitle>Shopping Cart ({items.length})</SheetTitle>
-          <SheetDescription>
-            {subtotal < 50 && `Add $${(50 - subtotal).toFixed(2)} more for free shipping!`}
-          </SheetDescription>
         </SheetHeader>
 
         <div className="flex-1 overflow-y-auto py-6">

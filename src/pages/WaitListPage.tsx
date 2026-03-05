@@ -39,10 +39,9 @@ export function WaitListPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-5xl mb-4">Join Our Newsletter</h1>
+              <h1 className="text-5xl mb-4">Join Our Community</h1>
               <p className="text-gray-600 text-lg">
-                Stay updated with the latest products, exclusive offers, and news from Kuleta.
-                Get insider access to new collections and special promotions.
+                Be part of our movement. Share your information to get involved with Kuleta and learn about exclusive opportunities, updates, and ways to make an impact.
               </p>
             </div>
 
@@ -125,7 +124,7 @@ export function WaitListPage() {
 
                 <div>
                   <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
-                    I'm interested in:
+                    How would you like to get involved?
                   </label>
                   <select
                     id="interest"
@@ -134,10 +133,13 @@ export function WaitListPage() {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#177F00] focus:border-transparent"
                   >
-                    <option value="buyer">Buying African products</option>
-                    <option value="seller">Selling my products</option>
-                    <option value="both">Both buying and selling</option>
-                    <option value="partnership">Partnership opportunities</option>
+                    <option value="buyer">I want to buy African products</option>
+                    <option value="seller">I want to sell my products</option>
+                    <option value="volunteer">I want to volunteer</option>
+                    <option value="donate">I want to donate/support</option>
+                    <option value="mentor">I want to be a mentor</option>
+                    <option value="partnership">I'm interested in partnership opportunities</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
 
@@ -145,7 +147,7 @@ export function WaitListPage() {
                   type="submit"
                   className="w-full bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white py-6 text-lg"
                 >
-                  Subscribe to Newsletter
+                  Get Involved
                 </Button>
               </form>
 
