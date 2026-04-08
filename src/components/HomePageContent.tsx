@@ -9,36 +9,82 @@ import { KuzaDada } from "@/components/KuzaDada";
 import { CustomerReview } from "@/components/CustomerReview";
 import { Sponsors } from "@/components/Sponsors";
 import type { Product, Category } from "@/app/types";
-import { getCategoryShopUrl } from "@/lib/catalog-api";
-import { KULETA_SHOP_BASE_URL } from "@/config";
+import { getCategoryShopUrl } from "@/lib/catalog-client";
 
 interface HomePageContentProps {
   products: Product[];
   categories: Category[];
+  announcementMessage: string;
+  shopBaseUrl: string;
+  hero: {
+    headlineBefore: string;
+    highlighted: string;
+    headlineAfter: string;
+    backgroundImage: string;
+  };
+  homeContent: {
+    categoriesTitle: string;
+    categoriesCtaLabel: string;
+    featuredTitle: string;
+    reviewQuote: string;
+    reviewAuthor: string;
+  };
+  story: {
+    title: string;
+    paragraphs: string[];
+    founders: { name: string; title: string; bio: string; image: string }[];
+  };
+  kuza: {
+    title: string;
+    description: string;
+    buttonLabel: string;
+    imageUrl: string;
+    videoUrl?: string;
+  };
+  sponsors: { title: string; imageUrl?: string }[];
+  partners: { title: string; imageUrl?: string }[];
+  featuredIn: { title: string; imageUrl?: string }[];
 }
 
-export function HomePageContent({ products, categories }: HomePageContentProps) {
+export function HomePageContent({
+  products,
+  categories,
+  announcementMessage,
+  shopBaseUrl,
+  hero,
+  homeContent,
+  story,
+  kuza,
+  sponsors,
+  partners,
+  featuredIn,
+}: HomePageContentProps) {
   const handleAddToCart = (product: Product) => {
-    window.location.href = `${KULETA_SHOP_BASE_URL}/search?product/${String(product.id)}`;
+    window.location.href = `${shopBaseUrl}/search?product/${String(product.id)}`;
   };
 
   return (
     <>
-      <AnnouncementBar />
-      <Hero />
+      <AnnouncementBar message={announcementMessage} />
+      <Hero
+        backgroundImage={hero.backgroundImage}
+        headlineBefore={hero.headlineBefore}
+        highlighted={hero.highlighted}
+        headlineAfter={hero.headlineAfter}
+      />
 
       {/* Product Categories Section */}
       <section id="categories" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl text-center mb-6">Shop by Category</h2>
+          <h2 className="text-4xl text-center mb-6">{homeContent.categoriesTitle}</h2>
           <div className="flex justify-center mb-10">
             <a
-              href={KULETA_SHOP_BASE_URL}
+              href={shopBaseUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#177F00] to-[#E99C00] px-10 py-3 text-white shadow-lg hover:opacity-95 transition-opacity"
             >
-              Shop Now
+              {homeContent.categoriesCtaLabel}
             </a>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto overflow-y-auto pb-9">
@@ -53,7 +99,11 @@ export function HomePageContent({ products, categories }: HomePageContentProps) 
                   "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                 }
                 onClick={() =>
-                  window.open(getCategoryShopUrl(category), "_blank", "noopener,noreferrer")
+                  window.open(
+                    getCategoryShopUrl(category, shopBaseUrl),
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
                 }
               />
             ))}
@@ -64,7 +114,7 @@ export function HomePageContent({ products, categories }: HomePageContentProps) 
       {/* Featured Products */}
       <section id="featured-products" className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl text-center mb-12">Featured Products</h2>
+          <h2 className="text-4xl text-center mb-12">{homeContent.featuredTitle}</h2>
           <FeaturedProductsCarousel
             products={products.slice(0, 10)}
             onAddToCart={handleAddToCart}
@@ -73,16 +123,22 @@ export function HomePageContent({ products, categories }: HomePageContentProps) 
       </section>
 
       {/* Our Story */}
-      <OurStory />
+      <OurStory title={story.title} paragraphs={story.paragraphs} founders={story.founders} />
 
       {/* Kuza Dada Section */}
-      <KuzaDada />
+      <KuzaDada
+        title={kuza.title}
+        description={kuza.description}
+        buttonLabel={kuza.buttonLabel}
+        imageUrl={kuza.imageUrl}
+        videoUrl={kuza.videoUrl}
+      />
 
       {/* Customer Review */}
-      <CustomerReview />
+      <CustomerReview quote={homeContent.reviewQuote} author={homeContent.reviewAuthor} />
 
       {/* Sponsors */}
-      <Sponsors />
+      <Sponsors sponsors={sponsors} partners={partners} featured={featuredIn} />
     </>
   );
 }

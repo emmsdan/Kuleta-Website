@@ -1,8 +1,13 @@
 "use client";
 
-const backgroundImage = "/assets/b968a02aa95c98f64d11bb742ce5b76a609a84a9.png";
+interface HeroProps {
+  backgroundImage: string;
+  headlineBefore: string;
+  highlighted: string;
+  headlineAfter: string;
+}
 
-export function Hero() {
+export function Hero({ backgroundImage, headlineBefore, highlighted, headlineAfter }: HeroProps) {
   return (
     <section className="bg-gradient-to-br from-gray-50 to-green-50 overflow-hidden">
       <div className="container mx-auto px-4 py-16">
@@ -17,11 +22,11 @@ export function Hero() {
           {/* Left: Headline */}
           <div className="space-y-6 relative z-10 sm:mt-[200px]">
             <h1 className="md:text-7xl leading-tight text-center text-7xl">
-              Bringing the local{" "}
+              {headlineBefore}{" "}
               <span className="bg-gradient-to-r from-[#177F00] to-[#E99C00] bg-clip-text text-transparent">
-                African Market
+                {highlighted}
               </span>{" "}
-              to the world
+              {headlineAfter}
             </h1>
           </div>
         </div>

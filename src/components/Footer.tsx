@@ -5,10 +5,39 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Instagram, Linkedin } from "lucide-react";
 import { toast } from "sonner";
-import { CONTACT_EMAIL, KULETA_SHOP_BASE_URL, SOCIAL_LINKS } from "@/config";
 import Link from "next/link";
 
-export function Footer() {
+interface FooterLink {
+  label: string;
+  path: string;
+}
+
+interface FooterProps {
+  logoUrl: string;
+  tagline: string;
+  copyright: string;
+  contactEmail: string;
+  socialLinks: {
+    instagram: string;
+    linkedin: string;
+  };
+  shopLinks: FooterLink[];
+  contactLinks: FooterLink[];
+  newsletterTitle: string;
+  newsletterPlaceholder: string;
+}
+
+export function Footer({
+  logoUrl,
+  tagline,
+  copyright,
+  contactEmail,
+  socialLinks,
+  shopLinks,
+  contactLinks,
+  newsletterTitle,
+  newsletterPlaceholder,
+}: FooterProps) {
   const [newsletterEmail, setNewsletterEmail] = useState("");
 
   const handleNewsletterSubmit = (event: FormEvent) => {
@@ -29,13 +58,13 @@ export function Footer() {
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <img
-                src="/assets/logo.png"
+                src={logoUrl}
                 alt="Kuleta Inc"
                 className="h-8 w-auto object-contain mix-blend-multiply dark:mix-blend-lighten"
               />
             </div>
             <p className="text-white/80 text-sm text-center">
-              Bringing the local African Market to the world
+              {tagline}
             </p>
           </div>
 
@@ -43,33 +72,24 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-white">Shop</h3>
             <ul className="space-y-2 text-sm text-white/80">
-              <li>
-                <a
-                  href="#"
-                  onClick={(event) => {
-                    event.preventDefault();
-                    window.open(KULETA_SHOP_BASE_URL, "_blank", "noopener,noreferrer");
-                  }}
-                  className="hover:text-[#E99C00] transition-colors"
-                >
-                  Shop
-                </a>
-              </li>
-              <li>
-                <Link href="/#categories" className="hover:text-[#E99C00] transition-colors">
-                  Categories
-                </Link>
-              </li>
-              <li>
-                <Link href="/#featured-products" className="hover:text-[#E99C00] transition-colors">
-                  Featured Products
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-[#E99C00] transition-colors">
-                  About
-                </Link>
-              </li>
+              {shopLinks.map((item) => (
+                <li key={`${item.label}-${item.path}`}>
+                  {item.path.startsWith("http") ? (
+                    <a
+                      href={item.path}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-[#E99C00] transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link href={item.path} className="hover:text-[#E99C00] transition-colors">
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -77,21 +97,34 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-white">Contact</h3>
             <ul className="space-y-2 text-sm text-white/80">
-              <li>
-                <Link href="/contact" className="hover:text-[#E99C00] transition-colors">
-                  Contact
-                </Link>
-              </li>
+              {contactLinks.map((item) => (
+                <li key={`${item.label}-${item.path}`}>
+                  {item.path.startsWith("http") ? (
+                    <a
+                      href={item.path}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-[#E99C00] transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link href={item.path} className="hover:text-[#E99C00] transition-colors">
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h3 className="mb-4 text-white">Newsletter</h3>
+            <h3 className="mb-4 text-white">{newsletterTitle}</h3>
             <form className="flex gap-2" onSubmit={handleNewsletterSubmit}>
               <Input
                 type="email"
-                placeholder="Your email"
+                placeholder={newsletterPlaceholder}
                 value={newsletterEmail}
                 onChange={(event) => setNewsletterEmail(event.target.value)}
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
@@ -105,7 +138,7 @@ export function Footer() {
             </form>
             <div className="flex gap-3 mt-4">
               <a
-                href={SOCIAL_LINKS.instagram}
+                href={socialLinks.instagram}
                 target="_blank"
                 rel="noreferrer"
                 className="text-white/80 hover:text-[#E99C00] transition-colors"
@@ -113,7 +146,7 @@ export function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href={SOCIAL_LINKS.linkedin}
+                href={socialLinks.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="text-white/80 hover:text-[#E99C00] transition-colors"
@@ -123,15 +156,15 @@ export function Footer() {
             </div>
             <p className="mt-4 text-xs text-white/70">
               For media and support, email us at{" "}
-              <a className="underline" href={`mailto:${CONTACT_EMAIL}`}>
-                {CONTACT_EMAIL}
+              <a className="underline" href={`mailto:${contactEmail}`}>
+                {contactEmail}
               </a>
               .
             </p>
           </div>
         </div>
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/80">
-          © 2026 Kuleta Inc. All rights reserved.
+          {copyright}
         </div>
       </div>
     </footer>

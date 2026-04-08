@@ -1,9 +1,17 @@
-export function AnnouncementBar() {
+interface AnnouncementBarProps {
+  message: string;
+}
+
+export function AnnouncementBar({ message }: AnnouncementBarProps) {
+  if (!message.trim()) {
+    return null;
+  }
+
   return (
     <div className="bg-gradient-to-r from-[#177F00] to-[#E99C00] text-white py-5 sm:py-5">
       <div className="container mx-auto px-4">
         <p className="text-center text-lg md:text-xl font-medium">
-          
+          {message}
         </p>
       </div>
     </div>

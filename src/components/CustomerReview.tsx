@@ -1,6 +1,15 @@
 import { Quote } from "lucide-react";
 
-export function CustomerReview() {
+interface CustomerReviewProps {
+  quote: string;
+  author: string;
+}
+
+export function CustomerReview({ quote, author }: CustomerReviewProps) {
+  if (!quote.trim()) {
+    return null;
+  }
+
   return (
     <section className="bg-gradient-to-r from-[#177F00] to-[#E99C00] py-20 relative overflow-hidden">
       {/* Animated Gradient Circles */}
@@ -11,10 +20,10 @@ export function CustomerReview() {
         <div className="max-w-4xl mx-auto text-center text-white">
           <Quote className="h-12 w-12 mx-auto mb-6 text-white/80" />
           <blockquote className="text-2xl md:text-3xl mb-6 leading-relaxed">
-            &quot;Kuleta has transformed how I access authentic African products. The quality is exceptional and shipping is always reliable. I feel connected to my roots with every purchase!&quot;
+            &quot;{quote}&quot;
           </blockquote>
           <div className="space-y-1">
-            <p className="text-xl font-semibold text-white mb-1">Kuleta Customer</p>
+            <p className="text-xl font-semibold text-white mb-1">{author}</p>
           </div>
         </div>
       </div>

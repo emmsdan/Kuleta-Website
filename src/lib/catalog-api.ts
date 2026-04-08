@@ -1,104 +1,70 @@
-import { KULETA_API_BASE_URL, KULETA_SHOP_BASE_URL } from "@/config";
-import type { ApiListResponse, Category, Product } from "@/app/types";
-import { mockStore } from "@/store/mock";
-
-const REQUEST_TIMEOUT_MS = 8000;
-
-function buildRequestHeaders(): HeadersInit {
-  const headers: Record<string, string> = {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  };
-
-  const token = process.env.KULETA_AUTH_TOKEN;
-  if (token) {
-    headers.Authorization = `Bearer ${token}`;
-  }
-
-  const apiKey = process.env.KULETA_API_KEY;
-  if (apiKey) {
-    headers["X-API-Key"] = apiKey;
-  }
-
-  return headers;
-}
-
-async function fetchJson<T>(url: string): Promise<T> {
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-
-  try {
-    const response = await fetch(url, {
-      method: "GET",
-      mode: "cors",
-      headers: buildRequestHeaders(),
-      signal: controller.signal,
-    });
-
-    if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}`);
-    }
-
-    return (await response.json()) as T;
-  } finally {
-    clearTimeout(timeoutId);
-  }
-}
+import type { Category, Product } from "@/app/types";
+import { getCollection } from "@/lib/cms";
 
 export interface CatalogLoadResult {
   categories: Category[];
-  source: "api" | "mock";
+  source: "api" | "mock" | "cms";
 }
 
 export interface ProductLoadResult {
   products: Product[];
-  source: "api" | "mock";
+  source: "cms";
 }
 
 export async function getHomeCategoriesWithFallback(): Promise<CatalogLoadResult> {
-  try {
-    const response = await fetchJson<ApiListResponse<Category>>(`${KULETA_API_BASE_URL}/categories/home`);
-    return {
-      categories: response.data,
-      source: "api",
-    };
-  } catch {
-    return {
-      categories: mockStore.homeCategories.data,
-      source: "mock",
-    };
-  }
+  const records = await getCollection("categories");
+  return {
+    categories: records.map((item, index) => ({
+      id: Number((item.metadata as { id?: number } | null)?.id ?? index + 1),
+      slug: item.slug || item.title.toLowerCase().replace(/\s+/g, "-"),
+      name: item.title,
+      banner: item.imageUrl || undefined,
+      cover_image: item.imageUrl || undefined,
+      icon: item.imageUrl || undefined,
+      links: item.linkUrl ? { products: item.linkUrl } : undefined,
+    })),
+    source: "cms",
+  };
 }
 
 export async function getCategoriesWithFallback(): Promise<CatalogLoadResult> {
-  try {
-    const response = await fetchJson<ApiListResponse<Category>>(`${KULETA_API_BASE_URL}/categories?parent_id=0`);
-    return {
-      categories: response.data,
-      source: "api",
-    };
-  } catch {
-    return {
-      categories: mockStore.categories.data,
-      source: "mock",
-    };
-  }
+  return getHomeCategoriesWithFallback();
 }
 export async function getProductsWithFallback(): Promise<ProductLoadResult> {
-  try {
-    const response = await fetchJson<ApiListResponse<Product>>(`${KULETA_API_BASE_URL}/products`);
-    return {
-      products: response.data,
-      source: "api",
-    };
-  } catch {
-    return {
-      products: mockStore.products.data,
-      source: "mock",
-    };
-  }
+  const records = await getCollection("products");
+  return {
+    products: records.map((item, index) => {
+      const metadata = (item.metadata as {
+        id?: string;
+        price?: number;
+        originalPrice?: number;
+        discount?: number;
+        rating?: number;
+        reviews?: number;
+      } | null) || { id: String(index + 1) };
+
+      return {
+        id: metadata.id || String(index + 1),
+        name: item.title,
+        category: item.subtitle || "General",
+        image: item.imageUrl || "",
+        description: item.body || undefined,
+        price: Number(metadata.price ?? 0),
+        originalPrice: metadata.originalPrice,
+        discount: metadata.discount,
+        rating: Number(metadata.rating ?? 0),
+        reviews: Number(metadata.reviews ?? 0),
+      };
+    }),
+    source: "cms",
+  };
 }
 
 export function getCategoryShopUrl(category: Category): string {
-  return `${KULETA_SHOP_BASE_URL}/category/${encodeURIComponent(category.slug || String(category.id))}`;
+  if (category.links?.products) {
+    return category.links.products;
+  }
+
+  const fallbackShopUrl = process.env.NEXT_PUBLIC_KULETA_SHOP_BASE_URL || "https://dev-preview-1025.kuleta.io";
+  return `${fallbackShopUrl}/category/${encodeURIComponent(category.slug || String(category.id))}`;
 }

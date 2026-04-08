@@ -4,35 +4,28 @@ import { ShoppingCart, User, Menu, Search } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { KULETA_SHOP_BASE_URL } from "@/config";
 import { useState } from "react";
 
-const kuletaLogo = "/assets/logo.png";
+interface NavLink {
+  label: string;
+  path: string;
+}
 
-export function Header() {
+interface HeaderProps {
+  logoUrl: string;
+  menuItems: NavLink[];
+  dropdownItems: NavLink[];
+  shopBaseUrl: string;
+}
+
+export function Header({ logoUrl, menuItems, dropdownItems, shopBaseUrl }: HeaderProps) {
   const [searchQuery, setSearchQuery] = useState("");
-
-  const menuItems = [
-    { label: "Home", path: "/" },
-    { label: "Shop", path: KULETA_SHOP_BASE_URL },
-    { label: "About Us", path: "/about" },
-    { label: "Kuza Dada", path: "/kuza-dada" },
-    { label: "Contact", path: "/contact" }
-  ];
-  
-  const dropdownItems = [
-    { label: "Shop", path: KULETA_SHOP_BASE_URL },
-    { label: "Join Our Newsletter", path: "/get-involved" },
-    { label: "Meet the Team", path: "/team" },
-    { label: "Advisory Board", path: "/advisory-board" },
-    { label: "FAQ", path: "/faq" }
-  ];
 
   const handleSearch = () => {
     const encodedQuery = encodeURIComponent(searchQuery.trim());
     const searchUrl = encodedQuery
-      ? `${KULETA_SHOP_BASE_URL}/search?keyword=${encodedQuery}&q=${encodedQuery}`
-      : KULETA_SHOP_BASE_URL;
+      ? `${shopBaseUrl}/search?keyword=${encodedQuery}&q=${encodedQuery}`
+      : shopBaseUrl;
 
     window.open(searchUrl, "_blank", "noopener,noreferrer");
   };
@@ -77,7 +70,7 @@ export function Header() {
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <img src={kuletaLogo} alt="Kuleta Inc" className="h-8 w-auto object-contain mix-blend-multiply dark:mix-blend-lighten" />
+              <img src={logoUrl} alt="Kuleta Inc" className="h-8 w-auto object-contain mix-blend-multiply dark:mix-blend-lighten" />
             </Link>
           </div>
 
@@ -136,7 +129,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               className="text-gray-700 hover:text-[#177F00]"
-              onClick={() => window.open(`${KULETA_SHOP_BASE_URL}/users/login`, "_blank", "noopener,noreferrer")}
+              onClick={() => window.open(`${shopBaseUrl}/users/login`, "_blank", "noopener,noreferrer")}
             >
               <User className="h-5 w-5" />
             </Button>
@@ -144,7 +137,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               className="relative text-gray-700 hover:text-[#177F00]"
-              onClick={() => window.open(`${KULETA_SHOP_BASE_URL}/cart`, "_blank", "noopener,noreferrer")}
+              onClick={() => window.open(`${shopBaseUrl}/cart`, "_blank", "noopener,noreferrer")}
             >
               <ShoppingCart className="h-5 w-5" />
             </Button>
