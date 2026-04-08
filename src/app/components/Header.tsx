@@ -1,17 +1,15 @@
+"use client";
+
 import { ShoppingCart, User, Menu, Search } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
 import { KULETA_SHOP_BASE_URL } from "@/app/config";
 import { useState } from "react";
-import kuletaLogo from "@/assets/logo.png";
 
-interface HeaderProps {
-  cartItemCount: number;
-  onCartClick: () => void;
-}
+const kuletaLogo = "/assets/logo.png";
 
-export function Header({ cartItemCount, onCartClick }: HeaderProps) {
+export function Header() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const menuItems = [
@@ -67,7 +65,7 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
                   ) : (
                   <Link
                     key={item.label}
-                    to={item.path}
+                    href={item.path}
                     className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#177F00]/10 hover:to-[#E99C00]/10 hover:text-[#177F00] transition-colors first:rounded-t-lg last:rounded-b-lg"
                   >
                     {item.label}
@@ -78,7 +76,7 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
             </div>
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <img src={kuletaLogo} alt="Kuleta Inc" className="h-8 w-auto object-contain mix-blend-multiply dark:mix-blend-lighten" />
             </Link>
           </div>
@@ -99,7 +97,7 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
               ) : (
                 <Link
                   key={item.label}
-                  to={item.path}
+                  href={item.path}
                   className={`text-gray-700 hover:text-[#177F00] transition-colors relative pb-1 ${
                     index === 0 ? 'after:content-[""] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gradient-to-r after:from-[#177F00] after:to-[#E99C00]' : ''
                   }`}
@@ -146,14 +144,9 @@ export function Header({ cartItemCount, onCartClick }: HeaderProps) {
               variant="ghost"
               size="icon"
               className="relative text-gray-700 hover:text-[#177F00]"
-              onClick={onCartClick}
+              onClick={() => window.open(`${KULETA_SHOP_BASE_URL}/cart`, "_blank", "noopener,noreferrer")}
             >
               <ShoppingCart className="h-5 w-5" />
-              {cartItemCount > 0 && (
-                <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-gradient-to-r from-[#177F00] to-[#E99C00] text-xs flex items-center justify-center text-white">
-                  {cartItemCount}
-                </span>
-              )}
             </Button>
           </div>
         </div>

@@ -1,9 +1,12 @@
+"use client";
+
 import Slider from "react-slick";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
-import obamaFoundationLogo from "@/assets/c765af3d8366941d8c4bbc789d42f7b0d0e6179f.png";
+
+const obamaFoundationLogo = "/assets/c765af3d8366941d8c4bbc789d42f7b0d0e6179f.png";
 
 export function Sponsors() {
-  const sponsors = [
+  const sponsors: { type: string; name: string; logo: string; subtitle?: string }[] = [
     { type: "image", name: "UChicago Booth Rustandy Center", logo: "https://www.chicagobooth.edu/-/media/enterprise/centers/rustandy/what-we-do/module-imgs500/rustandy-center-logo-vert-rgb_web.jpg?h=10%25&w=33%25&hash=E7D671F6CC7AC8DA8C231F4A5931FA08" },
     { type: "image", name: "Simply Tabasamu", logo: "https://simplytabasamu.com/cdn/shop/files/6.png?height=628&pad_color=ffffff&v=1762535191&width=1200" },
     { type: "image", name: "Peace for People", logo: "https://www.middlebury.edu/sites/default/files/2021-12/PfP%20HQ%20Logo.png?fv=e6Y7bbAn" }
@@ -51,7 +54,7 @@ export function Sponsors() {
             <div className="h-[300px]">
               <Slider {...carouselSettings}>
                 {sponsors.map((sponsor, index) => (
-                  <div key={`${sponsor}-${index}`} className="px-2">
+                  <div key={`${sponsor.name}-${index}`} className="px-2">
                     {sponsor.type === "custom" ? (
                       <div className="h-24 bg-transparent rounded flex flex-col items-center justify-center transition-all cursor-pointer my-2 px-4">
                         <div className="text-[#800020] font-bold text-lg leading-tight tracking-wide">
@@ -71,7 +74,7 @@ export function Sponsors() {
                       </div>
                     ) : (
                       <div className="h-20 bg-transparent rounded flex items-center justify-center text-gray-600 transition-colors cursor-pointer my-2 text-lg">
-                        {sponsor}
+                        {sponsor.name}
                       </div>
                     )}
                   </div>
@@ -88,7 +91,7 @@ export function Sponsors() {
             <div className="h-[400px] overflow-hidden">
               <Slider {...carouselSettings}>
                 {partners.map((partner, index) => (
-                  <div key={`${partner}-${index}`} className="px-2">
+                  <div key={`${partner.name}-${index}`} className="px-2">
                     {partner.type === "image" ? (
                       <div className="h-20 bg-transparent rounded flex items-center justify-center transition-all cursor-pointer my-2 px-4">
                         <ImageWithFallback
@@ -99,7 +102,7 @@ export function Sponsors() {
                       </div>
                     ) : (
                       <div className="h-20 bg-transparent rounded flex items-center justify-center text-gray-600 transition-colors cursor-pointer my-2">
-                        {partner}
+                        {partner.name}
                       </div>
                     )}
                   </div>
@@ -116,7 +119,7 @@ export function Sponsors() {
             <div className="h-[400px]">
               <Slider {...carouselSettings}>
                 {featured.map((media, index) => (
-                  <div key={`${media}-${index}`} className="px-2">
+                  <div key={`${media.name}-${index}`} className="px-2">
                     {media.type === "image" ? (
                       <div className="h-20 bg-transparent rounded flex items-center justify-center transition-all cursor-pointer my-2 px-4">
                         <ImageWithFallback
@@ -127,7 +130,7 @@ export function Sponsors() {
                       </div>
                     ) : (
                       <div className="h-20 bg-transparent rounded flex items-center justify-center text-gray-600 transition-colors cursor-pointer my-2">
-                        {media}
+                        {media.name}
                       </div>
                     )}
                   </div>
