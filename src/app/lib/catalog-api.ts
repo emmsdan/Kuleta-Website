@@ -10,12 +10,12 @@ function buildRequestHeaders(): HeadersInit {
     "Content-Type": "application/json",
   };
 
-  const token = import.meta.env.VITE_KULETA_AUTH_TOKEN;
+  const token = process.env.KULETA_AUTH_TOKEN;
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
 
-  const apiKey = import.meta.env.VITE_KULETA_API_KEY;
+  const apiKey = process.env.KULETA_API_KEY;
   if (apiKey) {
     headers["X-API-Key"] = apiKey;
   }

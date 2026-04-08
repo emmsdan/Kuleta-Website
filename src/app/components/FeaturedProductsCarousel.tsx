@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 import Slider from "react-slick";
 import { ProductCard } from "@/app/components/ProductCard";

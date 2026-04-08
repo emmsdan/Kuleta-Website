@@ -1,10 +1,12 @@
+"use client";
+
 import { useState } from "react";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
 import { toast } from "sonner";
 import { Mail, User, Building, MapPin } from "lucide-react";
 
-export function WaitListPage() {
+export default function GetInvolvedPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,22 +17,12 @@ export function WaitListPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
     toast.success("Thank you for joining our waitlist! We'll be in touch soon.");
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      location: "",
-      interest: "buyer",
-    });
+    setFormData({ name: "", email: "", company: "", location: "", interest: "buyer" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (

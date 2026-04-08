@@ -1,3 +1,5 @@
+"use client";
+
 import { AnnouncementBar } from "@/app/components/AnnouncementBar";
 import { Hero } from "@/app/components/Hero";
 import { RegionCard } from "@/app/components/RegionCard";
@@ -10,18 +12,21 @@ import type { Product, Category } from "@/app/types";
 import { getCategoryShopUrl } from "@/app/lib/catalog-api";
 import { KULETA_SHOP_BASE_URL } from "@/app/config";
 
-interface HomePageProps {
+interface HomePageContentProps {
   products: Product[];
   categories: Category[];
-  onAddToCart: (product: Product) => void;
 }
 
-export function HomePage({ products, categories, onAddToCart }: HomePageProps) {
+export function HomePageContent({ products, categories }: HomePageContentProps) {
+  const handleAddToCart = (product: Product) => {
+    window.location.href = `${KULETA_SHOP_BASE_URL}/search?product/${String(product.id)}`;
+  };
+
   return (
     <>
       <AnnouncementBar />
       <Hero />
-      
+
       {/* Product Categories Section */}
       <section id="categories" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -47,7 +52,9 @@ export function HomePage({ products, categories, onAddToCart }: HomePageProps) {
                   category.icon ||
                   "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                 }
-                onClick={() => window.open(getCategoryShopUrl(category), "_blank", "noopener,noreferrer")}
+                onClick={() =>
+                  window.open(getCategoryShopUrl(category), "_blank", "noopener,noreferrer")
+                }
               />
             ))}
           </div>
@@ -58,7 +65,10 @@ export function HomePage({ products, categories, onAddToCart }: HomePageProps) {
       <section id="featured-products" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl text-center mb-12">Featured Products</h2>
-          <FeaturedProductsCarousel products={products.slice(0, 10)} onAddToCart={onAddToCart} />
+          <FeaturedProductsCarousel
+            products={products.slice(0, 10)}
+            onAddToCart={handleAddToCart}
+          />
         </div>
       </section>
 

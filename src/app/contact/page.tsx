@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
@@ -5,7 +7,38 @@ import { toast } from "sonner";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/app/config";
 
-export function ContactPage() {
+const contactInfo = [
+  {
+    icon: Mail,
+    title: "Email",
+    details: "info@kuleta.io",
+    description: "Send us an email anytime",
+    link: "mailto:info@kuleta.io",
+  },
+  {
+    icon: Phone,
+    title: "Phone",
+    details: "+1 (502)319-2096",
+    description: "Mon-Fri from 9am to 6pm CST",
+    link: "tel:+15023192096",
+  },
+  {
+    icon: MapPin,
+    title: "Office",
+    details: "1130 South Canal Street, #1591 Chicago, IL 60607",
+    description: "Visit our headquarters",
+    link: "#",
+  },
+  {
+    icon: Clock,
+    title: "Business Hours",
+    details: "Monday - Friday: 9:00 AM - 6:00 PM CST",
+    description: "We're here to help",
+    link: "#",
+  },
+];
+
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,53 +56,14 @@ export function ContactPage() {
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 
     toast.success("Thank you for contacting us! We'll get back to you within 24 hours.");
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      details: "info@kuleta.io",
-      description: "Send us an email anytime",
-      link: "mailto:info@kuleta.io",
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      details: "+1 (502)319-2096",
-      description: "Mon-Fri from 9am to 6pm CST",
-      link: "tel:+15023192096",
-    },
-    {
-      icon: MapPin,
-      title: "Office",
-      details: "1130 South Canal Street, #1591 Chicago, IL 60607",
-      description: "Visit our headquarters",
-      link: "#",
-    },
-    {
-      icon: Clock,
-      title: "Business Hours",
-      details: "Monday - Friday: 9:00 AM - 6:00 PM CST",
-      description: "We're here to help",
-      link: "#",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
@@ -191,7 +185,7 @@ export function ContactPage() {
 
             {/* Additional Info */}
             <div className="space-y-8">
-              {/* Map Placeholder */}
+              {/* Map */}
               <div className="rounded-2xl h-64 overflow-hidden border border-gray-200">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.7346729171893!2d-87.64153892346498!3d41.86973297124021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2cb9c4f4f4f5%3A0x4b4b4b4b4b4b4b4b!2s1130%20S%20Canal%20St%2C%20Chicago%2C%20IL%2060607!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
@@ -235,7 +229,9 @@ export function ContactPage() {
                     className="p-3 bg-gradient-to-r from-[#177F00]/10 to-[#E99C00]/10 rounded-full hover:from-[#177F00]/20 hover:to-[#E99C00]/20 transition-colors"
                     aria-label="Kuleta LinkedIn"
                   >
-                    <svg className="h-6 w-6 text-[#177F00]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452H16.89V14.86c0-1.333-.024-3.047-1.857-3.047-1.858 0-2.143 1.45-2.143 2.95v5.69H9.333V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.27 2.372 4.27 5.456v6.285zM5.337 7.433a2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM7.119 20.452H3.555V9h3.564v11.452z" /></svg>
+                    <svg className="h-6 w-6 text-[#177F00]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452H16.89V14.86c0-1.333-.024-3.047-1.857-3.047-1.858 0-2.143 1.45-2.143 2.95v5.69H9.333V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.27 2.372 4.27 5.456v6.285zM5.337 7.433a2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM7.119 20.452H3.555V9h3.564v11.452z" />
+                    </svg>
                   </a>
                   <a
                     href={SOCIAL_LINKS.instagram}

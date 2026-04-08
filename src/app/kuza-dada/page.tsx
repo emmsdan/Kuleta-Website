@@ -1,44 +1,68 @@
+"use client";
+
 import { Button } from "@/app/components/ui/button";
 import { Play, Award, BookOpen, Users, TrendingUp } from "lucide-react";
-import { Link } from "react-router-dom";
-import kuzaDadaImage from "@/assets/29d4542c8b108e0389991c23b1a793f7d500fb00.png";
+import Link from "next/link";
 
-export function KuzaDadaPage() {
-  const videoUrl = import.meta.env.VITE_KUZADADA_VIDEO_URL;
+const kuzaDadaImage = "/assets/29d4542c8b108e0389991c23b1a793f7d500fb00.png";
 
-  const programs = [
-    {
-      icon: BookOpen,
-      title: "Training & Education",
-      description:
-        "Comprehensive business skills training covering e-commerce, financial literacy, and digital marketing for women entrepreneurs.",
-    },
-    {
-      icon: Users,
-      title: "Mentorship Network",
-      description:
-        "Connect with experienced business mentors and successful entrepreneurs who guide you through your journey.",
-    },
-    {
-      icon: Award,
-      title: "Certification Programs",
-      description:
-        "Earn recognized certifications in various business and technical skills to boost your credibility and capabilities.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Market Access",
-      description:
-        "Direct access to Kuleta's platform and international markets, helping you reach customers worldwide.",
-    },
-  ];
+const programs = [
+  {
+    icon: BookOpen,
+    title: "Training & Education",
+    description:
+      "Comprehensive business skills training covering e-commerce, financial literacy, and digital marketing for women entrepreneurs.",
+  },
+  {
+    icon: Users,
+    title: "Mentorship Network",
+    description:
+      "Connect with experienced business mentors and successful entrepreneurs who guide you through your journey.",
+  },
+  {
+    icon: Award,
+    title: "Certification Programs",
+    description:
+      "Earn recognized certifications in various business and technical skills to boost your credibility and capabilities.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Market Access",
+    description:
+      "Direct access to Kuleta's platform and international markets, helping you reach customers worldwide.",
+  },
+];
 
-  const impact = [
-    { number: "1,000+", label: "Women Trained" },
-    { number: "15", label: "African Countries" },
-    { number: "85%", label: "Success Rate" },
-    { number: "$2M+", label: "Revenue Generated" },
-  ];
+const impact = [
+  { number: "1,000+", label: "Women Trained" },
+  { number: "15", label: "African Countries" },
+  { number: "85%", label: "Success Rate" },
+  { number: "$2M+", label: "Revenue Generated" },
+];
+
+const stories = [
+  {
+    name: "Fatima Ahmed",
+    location: "Lagos, Nigeria",
+    story: "Through Kuza Dada, I learned how to market my handmade jewelry online. Now I ship to customers in 5 countries!",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+  },
+  {
+    name: "Grace Mwangi",
+    location: "Nairobi, Kenya",
+    story: "The mentorship program connected me with experienced entrepreneurs who helped me scale my textile business.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+  },
+  {
+    name: "Adama Diallo",
+    location: "Accra, Ghana",
+    story: "I now employ 10 women in my community, all thanks to the skills I gained from Kuza Dada's training programs.",
+    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+  },
+];
+
+export default function KuzaDadaPage() {
+  const videoUrl = process.env.NEXT_PUBLIC_KUZADADA_VIDEO_URL;
 
   return (
     <div className="min-h-screen bg-white">
@@ -83,7 +107,7 @@ export function KuzaDadaPage() {
                 every woman has the potential to build a thriving business and transform her
                 community.
               </p>
-              <Link to="/get-involved">
+              <Link href="/get-involved">
                 <Button className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg">
                   Get Involved
                 </Button>
@@ -150,32 +174,7 @@ export function KuzaDadaPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl text-center mb-12">Success Stories</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Fatima Ahmed",
-                location: "Lagos, Nigeria",
-                story:
-                  "Through Kuza Dada, I learned how to market my handmade jewelry online. Now I ship to customers in 5 countries!",
-                image:
-                  "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-              },
-              {
-                name: "Grace Mwangi",
-                location: "Nairobi, Kenya",
-                story:
-                  "The mentorship program connected me with experienced entrepreneurs who helped me scale my textile business.",
-                image:
-                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-              },
-              {
-                name: "Adama Diallo",
-                location: "Accra, Ghana",
-                story:
-                  "I now employ 10 women in my community, all thanks to the skills I gained from Kuza Dada's training programs.",
-                image:
-                  "https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-              },
-            ].map((story) => (
+            {stories.map((story) => (
               <div
                 key={story.name}
                 className="bg-gradient-to-br from-gray-50 to-yellow-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
@@ -207,7 +206,7 @@ export function KuzaDadaPage() {
               there's a place for you in the Kuza Dada community.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/get-involved">
+              <Link href="/get-involved">
                 <Button className="bg-gradient-to-r from-[#177F00] to-[#E99C00] hover:from-[#177F00]/90 hover:to-[#E99C00]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg">
                   Get Involved
                 </Button>
