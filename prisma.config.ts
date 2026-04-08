@@ -6,7 +6,7 @@ export default defineConfig({
   schema: 'prisma/schema',
   migrations: {
     path: 'prisma/migrations',
-    seed: 'tsx prisma/seed.ts',
+    seed: 'tsx prisma/seeders/index.ts',
   },
   datasource: {
     // Empty fallback allows prisma generate to run in environments without DB access.
