@@ -6,6 +6,7 @@ import { Input } from "@/app/components/ui/input";
 import { Instagram, Linkedin } from "lucide-react";
 import { toast } from "sonner";
 import { CONTACT_EMAIL, KULETA_SHOP_BASE_URL, SOCIAL_LINKS } from "@/app/config";
+import Link from "next/link";
 
 export function Footer() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -55,19 +56,19 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/#categories" className="hover:text-[#E99C00] transition-colors">
+                <Link href="/#categories" className="hover:text-[#E99C00] transition-colors">
                   Categories
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#featured-products" className="hover:text-[#E99C00] transition-colors">
+                <Link href="/#featured-products" className="hover:text-[#E99C00] transition-colors">
                   Featured Products
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="hover:text-[#E99C00] transition-colors">
+                <Link href="/about" className="hover:text-[#E99C00] transition-colors">
                   About
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -77,9 +78,9 @@ export function Footer() {
             <h3 className="mb-4 text-white">Contact</h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <a href="/contact" className="hover:text-[#E99C00] transition-colors">
+                <Link href="/contact" className="hover:text-[#E99C00] transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

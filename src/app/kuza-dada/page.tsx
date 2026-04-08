@@ -187,7 +187,7 @@ export default function KuzaDadaPage() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-1">{story.name}</h3>
                   <p className="text-sm text-[#177F00] mb-3">{story.location}</p>
-                  <p className="text-gray-700 italic">"{story.story}"</p>
+                  <p className="text-gray-700 italic">&quot;{story.story}&quot;</p>
                 </div>
               </div>
             ))}
@@ -203,7 +203,7 @@ export default function KuzaDadaPage() {
             <p className="text-lg text-gray-600 mb-8">
               Join us in empowering the next generation of African women entrepreneurs. Whether
               you want to participate in our programs, become a mentor, or support our mission,
-              there's a place for you in the Kuza Dada community.
+              there&apos;s a place for you in the Kuza Dada community.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/get-involved">

@@ -99,7 +99,7 @@ export default function AdvisoryBoardPage() {
                   <p className="text-sm text-gray-500 mb-3">{advisor.company}</p>
                   <p className="text-gray-600 text-sm mb-4">{advisor.bio}</p>
                   {advisor.linkedin && (
-                    <a href={advisor.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-[#177F00] hover:text-[#E99C00] transition-colors" aria-label={`${advisor.name}'s LinkedIn`}>
+                    <a href={advisor.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-[#177F00] hover:text-[#E99C00] transition-colors" aria-label={`${advisor.name} LinkedIn`}>
                       <Linkedin className="w-5 h-5" />
                       <span>Connect</span>
                     </a>
@@ -112,7 +112,7 @@ export default function AdvisoryBoardPage() {
           <div className="mt-16 text-center">
             <div className="inline-block max-w-3xl">
               <p className="text-lg text-gray-700 leading-relaxed italic">
-                "Our advisory board represents decades of combined experience in finance, international trade, diplomacy, and sustainable development. Their strategic guidance ensures Kuleta remains committed to empowering African women entrepreneurs while building bridges between continents."
+                &quot;Our advisory board represents decades of combined experience in finance, international trade, diplomacy, and sustainable development. Their strategic guidance ensures Kuleta remains committed to empowering African women entrepreneurs while building bridges between continents.&quot;
               </p>
               <p className="mt-6 text-gray-600">— Kuleta Leadership Team</p>
             </div>

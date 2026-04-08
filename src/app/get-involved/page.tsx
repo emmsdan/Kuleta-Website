@@ -130,7 +130,7 @@ export default function GetInvolvedPage() {
                     <option value="volunteer">I want to volunteer</option>
                     <option value="donate">I want to donate/support</option>
                     <option value="mentor">I want to be a mentor</option>
-                    <option value="partnership">I'm interested in partnership opportunities</option>
+                    <option value="partnership">I&apos;m interested in partnership opportunities</option>
                     <option value="other">Other</option>
                   </select>
                 </div>

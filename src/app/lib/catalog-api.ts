@@ -1,5 +1,5 @@
 import { KULETA_API_BASE_URL, KULETA_SHOP_BASE_URL } from "@/app/config";
-import type { ApiListResponse, Category } from "@/app/types";
+import type { ApiListResponse, Category, Product } from "@/app/types";
 import { mockStore } from "@/store/mock";
 
 const REQUEST_TIMEOUT_MS = 8000;
@@ -50,6 +50,11 @@ export interface CatalogLoadResult {
   source: "api" | "mock";
 }
 
+export interface ProductLoadResult {
+  products: Product[];
+  source: "api" | "mock";
+}
+
 export async function getHomeCategoriesWithFallback(): Promise<CatalogLoadResult> {
   try {
     const response = await fetchJson<ApiListResponse<Category>>(`${KULETA_API_BASE_URL}/categories/home`);
@@ -79,16 +84,16 @@ export async function getCategoriesWithFallback(): Promise<CatalogLoadResult> {
     };
   }
 }
-export async function getProductsWithFallback(): Promise<CatalogLoadResult> {
+export async function getProductsWithFallback(): Promise<ProductLoadResult> {
   try {
-    const response = await fetchJson<ApiListResponse<Category>>(`${KULETA_API_BASE_URL}/categories?parent_id=0`);
+    const response = await fetchJson<ApiListResponse<Product>>(`${KULETA_API_BASE_URL}/products`);
     return {
-      categories: response.data,
+      products: response.data,
       source: "api",
     };
   } catch {
     return {
-      categories: mockStore.products,
+      products: mockStore.products.data,
       source: "mock",
     };
   }

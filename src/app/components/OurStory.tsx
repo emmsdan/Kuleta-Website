@@ -44,16 +44,16 @@ export function OurStory() {
               Kuleta was born from a deeply personal and common experience that revealed a larger gap faced by millions who shop in, the global market.
             </p>
             <p>
-              When my Manda's mother was preparing for his eldest brother's wedding, she wanted a dress that reflected who she was, something authentic, culturally rooted, and made back home. What should have been a simple process turned into weeks of uncertainty. Finding the right vendor was difficult. Communicating across borders was unreliable. Shipping was expensive, slow, and unpredictable. At every stage, there was doubt. Would it look like the photos? Would it arrive at all?
+              When my Manda&apos;s mother was preparing for his eldest brother&apos;s wedding, she wanted a dress that reflected who she was, something authentic, culturally rooted, and made back home. What should have been a simple process turned into weeks of uncertainty. Finding the right vendor was difficult. Communicating across borders was unreliable. Shipping was expensive, slow, and unpredictable. At every stage, there was doubt. Would it look like the photos? Would it arrive at all?
             </p>
             <p>
               This was a reminder of how disconnected global commerce still is from the lived realities of global communities. Despite strong demand, purchasing meaningful products from Africa often relies on informal channels, personal favors, or suitcase trade. There was no reliable, dignified, and transparent way to buy from home.
             </p>
             <p>
-              And my family wasn't alone.
+              And my family wasn&apos;t alone.
             </p>
             <p>
-              Across the United States, millions of African consumers are looking for trusted ways to access clothing, food, and cultural goods that connect them to home, and doing so without uncertainty, delays, or compromise. They don't just want products. The pathway itself.
+              Across the United States, millions of African consumers are looking for trusted ways to access clothing, food, and cultural goods that connect them to home, and doing so without uncertainty, delays, or compromise. They don&apos;t just want products. The pathway itself.
             </p>
             <p className="font-semibold">
               Kuleta was created to change that.
@@ -62,7 +62,7 @@ export function OurStory() {
               We built Kuleta as a bridge between global customers and the markets they love, combining technology, logistics, and trust to make cross-border purchasing seamless and dependable. From verified sourcing and quality assurance to reliable delivery and transparent pricing, Kuleta removes the friction that has long defined buying from Africa.
             </p>
             <p>
-              Today, Kuleta enables customers in the U.S. to shop intentionally, accessing authentic, shelf-stable goods and cultural products with confidence. Every order is about more than a transaction; it's about restoring access, preserving identity, and making global commerce feel personal again.
+              Today, Kuleta enables customers in the U.S. to shop intentionally, accessing authentic, shelf-stable goods and cultural products with confidence. Every order is about more than a transaction; it&apos;s about restoring access, preserving identity, and making global commerce feel personal again.
             </p>
           </div>
 

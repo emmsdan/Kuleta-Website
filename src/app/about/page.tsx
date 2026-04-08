@@ -72,7 +72,7 @@ export default function AboutPage() {
                 </div>
                 <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border-l-4 border-[#E99C00]">
                   <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                    When Manda's mother was preparing for his eldest brother's wedding, she wanted a dress that reflected who she was, something authentic, culturally rooted, and made back home. What should have been a simple process turned into weeks of uncertainty. Finding the right vendor was difficult. Communicating across borders was unreliable. Shipping was expensive, slow, and unpredictable. At every stage, there was doubt. <span className="italic font-medium">Would it look like the photos? Would it arrive at all?</span>
+                    When Manda&apos;s mother was preparing for his eldest brother&apos;s wedding, she wanted a dress that reflected who she was, something authentic, culturally rooted, and made back home. What should have been a simple process turned into weeks of uncertainty. Finding the right vendor was difficult. Communicating across borders was unreliable. Shipping was expensive, slow, and unpredictable. At every stage, there was doubt. <span className="italic font-medium">Would it look like the photos? Would it arrive at all?</span>
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     This was a reminder of how disconnected global commerce still is from the lived realities of global communities. Despite strong demand, purchasing meaningful products from Africa often relies on informal channels, personal favors, or suitcase trade. There was no reliable, dignified, and transparent way to buy from home.
@@ -80,11 +80,11 @@ export default function AboutPage() {
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-white rounded-xl p-6 shadow-md border border-gray-200">
-                    <p className="text-lg text-gray-700 leading-relaxed">And my family wasn't alone.</p>
+                    <p className="text-lg text-gray-700 leading-relaxed">And my family wasn&apos;t alone.</p>
                   </div>
                   <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 border-l-4 border-[#177F00]">
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      Across the United States, millions of African consumers are looking for trusted ways to access clothing, food, and cultural goods that connect them to home, and doing so without uncertainty, delays, or compromise. They don't just want products. The pathway itself.
+                      Across the United States, millions of African consumers are looking for trusted ways to access clothing, food, and cultural goods that connect them to home, and doing so without uncertainty, delays, or compromise. They don&apos;t just want products. The pathway itself.
                     </p>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                     We built Kuleta as a bridge between global customers and the markets they love, combining technology, logistics, and trust to make cross-border purchasing seamless and dependable. From verified sourcing and quality assurance to reliable delivery and transparent pricing, Kuleta removes the friction that has long defined buying from Africa.
                   </p>
                   <p className="text-lg leading-relaxed opacity-95">
-                    Today, Kuleta enables customers in the U.S. to shop intentionally, accessing authentic, shelf-stable goods and cultural products with confidence. Every order is about more than a transaction; it's about restoring access, preserving identity, and making global commerce feel personal again.
+                    Today, Kuleta enables customers in the U.S. to shop intentionally, accessing authentic, shelf-stable goods and cultural products with confidence. Every order is about more than a transaction; it&apos;s about restoring access, preserving identity, and making global commerce feel personal again.
                   </p>
                 </div>
               </div>
@@ -112,7 +112,7 @@ export default function AboutPage() {
                       <h3 className="text-2xl font-bold text-gray-900">Manda Bwerevu</h3>
                       <div className="inline-block bg-gradient-to-r from-[#177F00] to-[#E99C00] text-white px-4 py-1 rounded-full text-sm font-medium mt-2">Co-Founder &amp; CEO</div>
                     </div>
-                    <p className="text-gray-600 leading-relaxed">Manda leads Kuleta's vision, strategy, and customer growth. Raised across Africa and the United States, his lived experience navigating multiple cultures shaped Kuleta's demand-driven foundation. He brings experience across global supply chains, public policy, and entrepreneurship, with a focus on building scalable platforms that solve real consumer pain points. Manda holds graduate degrees from Harvard University and the University of Chicago, bringing expertise in areas of Education Policy, International Development, Social Entrepreneurship, and others. At Kuleta, he focuses on customer experience, diaspora engagement, and building a networked platform that feels as authentic as it is intentional.</p>
+                    <p className="text-gray-600 leading-relaxed">Manda leads Kuleta&apos;s vision, strategy, and customer growth. Raised across Africa and the United States, his lived experience navigating multiple cultures shaped Kuleta&apos;s demand-driven foundation. He brings experience across global supply chains, public policy, and entrepreneurship, with a focus on building scalable platforms that solve real consumer pain points. Manda holds graduate degrees from Harvard University and the University of Chicago, bringing expertise in areas of Education Policy, International Development, Social Entrepreneurship, and others. At Kuleta, he focuses on customer experience, diaspora engagement, and building a networked platform that feels as authentic as it is intentional.</p>
                   </div>
                 </div>
                 <div className="group relative">
@@ -123,7 +123,7 @@ export default function AboutPage() {
                       <h3 className="text-2xl font-bold text-gray-900">Judith</h3>
                       <div className="inline-block bg-gradient-to-r from-[#E99C00] to-[#D43500] text-white px-4 py-1 rounded-full text-sm font-medium mt-2">Co-Founder &amp; COO</div>
                     </div>
-                    <p className="text-gray-600 leading-relaxed">Judith leads Kuleta's operations, vendor partnerships, and program execution. Born and raised in Kenya, her lived experience working within informal and emerging market economies shaped Kuleta's operational backbone and commitment to quality and trust. She brings over a decade of experience across finance, public policy, and enterprise development, with a proven ability to help entrepreneurs and small businesses to operate sustainably and scale with confidence. In addition to many other degrees, Judith holds a PhD in Finance and a Master's degree in Banking, bringing deep expertise in financial systems and market access. As Chief Operating Officer at Kuleta, she focuses on operational excellence, vendor enablement, and ensuring that Kuleta's platform reflects both the integrity and standards of the markets it serves.</p>
+                    <p className="text-gray-600 leading-relaxed">Judith leads Kuleta&apos;s operations, vendor partnerships, and program execution. Born and raised in Kenya, her lived experience working within informal and emerging market economies shaped Kuleta&apos;s operational backbone and commitment to quality and trust. She brings over a decade of experience across finance, public policy, and enterprise development, with a proven ability to help entrepreneurs and small businesses to operate sustainably and scale with confidence. In addition to many other degrees, Judith holds a PhD in Finance and a Master&apos;s degree in Banking, bringing deep expertise in financial systems and market access. As Chief Operating Officer at Kuleta, she focuses on operational excellence, vendor enablement, and ensuring that Kuleta&apos;s platform reflects both the integrity and standards of the markets it serves.</p>
                   </div>
                 </div>
               </div>
@@ -181,7 +181,7 @@ export default function AboutPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl mb-6">Join Our Journey</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Whether you're a customer looking for authentic African products or a vendor wanting to share your craft with the world, we'd love to have you be part of the Kuleta family.</p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Whether you&apos;re a customer looking for authentic African products or a vendor wanting to share your craft with the world, we&apos;d love to have you be part of the Kuleta family.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href={KULETA_SHOP_BASE_URL} target="_blank" rel="noreferrer" className="px-8 py-3 bg-gradient-to-r from-[#177F00] to-[#E99C00] text-white rounded-full hover:shadow-lg transition-shadow">Start Shopping</a>
           </div>

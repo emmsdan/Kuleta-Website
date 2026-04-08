@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, Mail, Phone } from "lucide-react";
+import Link from "next/link";
 
 interface FAQItem {
   question: string;
@@ -110,8 +111,8 @@ export default function FAQPage() {
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-4">Looking for something else?</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="/team" className="px-6 py-2 border border-[#177F00] text-[#177F00] rounded-full hover:bg-[#177F00] hover:text-white transition-colors">Meet Our Team</a>
-              <a href="/" className="px-6 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-[#177F00] hover:text-[#177F00] transition-colors">Back to Home</a>
+              <Link href="/team" className="px-6 py-2 border border-[#177F00] text-[#177F00] rounded-full hover:bg-[#177F00] hover:text-white transition-colors">Meet Our Team</Link>
+              <Link href="/" className="px-6 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-[#177F00] hover:text-[#177F00] transition-colors">Back to Home</Link>
             </div>
           </div>
         </div>

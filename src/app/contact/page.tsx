@@ -6,6 +6,7 @@ import { Input } from "@/app/components/ui/input";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/app/config";
+import Link from "next/link";
 
 const contactInfo = [
   {
@@ -75,7 +76,7 @@ export default function ContactPage() {
               Get In Touch
             </h1>
             <p className="text-xl text-gray-600">
-              Have a question or want to learn more about Kuleta? We'd love to hear from you!
+              Have a question or want to learn more about Kuleta? We&apos;d love to hear from you!
             </p>
           </div>
         </div>
@@ -206,12 +207,12 @@ export default function ContactPage() {
                   Looking for quick answers? Check out our FAQ section for common questions about
                   orders, shipping, and more.
                 </p>
-                <a
+                <Link
                   href="/faq"
                   className="inline-block px-6 py-3 bg-gradient-to-r from-[#177F00] to-[#E99C00] text-white rounded-full hover:shadow-lg transition-shadow"
                 >
                   Visit FAQ
-                </a>
+                </Link>
               </div>
 
               {/* Social Media */}
