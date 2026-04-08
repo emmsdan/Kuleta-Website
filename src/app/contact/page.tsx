@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/app/config";
+import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/config";
 import Link from "next/link";
 
 const contactInfo = [

@@ -1,7 +1,7 @@
 "use client";
 
 import Slider from "react-slick";
-import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 
 const obamaFoundationLogo = "/assets/c765af3d8366941d8c4bbc789d42f7b0d0e6179f.png";
 

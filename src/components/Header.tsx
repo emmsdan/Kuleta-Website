@@ -2,9 +2,9 @@
 
 import { ShoppingCart, User, Menu, Search } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
-import { KULETA_SHOP_BASE_URL } from "@/app/config";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { KULETA_SHOP_BASE_URL } from "@/config";
 import { useState } from "react";
 
 const kuletaLogo = "/assets/logo.png";

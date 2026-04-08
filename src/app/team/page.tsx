@@ -1,5 +1,5 @@
 import { Linkedin, Mail } from "lucide-react";
-import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 
 const amaraImage = "/assets/f023eede0d58ad39ef886df4299294f1c3e4312c.png";
 const judithImage = "/assets/4279e38172a19781e32b3d1f3a65bdbe7652f897.png";

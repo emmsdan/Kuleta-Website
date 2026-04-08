@@ -1,11 +1,11 @@
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-} from "@/app/components/ui/sheet";
-import { Separator } from "@/app/components/ui/separator";
+} from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
 import { X, Plus, Minus, ShoppingBag } from "lucide-react";
 import type { CartItem } from "@/app/types";
 

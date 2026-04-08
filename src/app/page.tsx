@@ -2,8 +2,8 @@ import {
   getHomeCategoriesWithFallback,
   getCategoriesWithFallback,
   getProductsWithFallback,
-} from "@/app/lib/catalog-api";
-import { HomePageContent } from "@/app/components/HomePageContent";
+} from "@/lib/catalog-api";
+import { HomePageContent } from "@/components/HomePageContent";
 
 export default async function HomePage() {
   const [homeResult, categoriesResult, productsResult] = await Promise.all([

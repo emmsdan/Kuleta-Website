@@ -1,16 +1,16 @@
 "use client";
 
-import { AnnouncementBar } from "@/app/components/AnnouncementBar";
-import { Hero } from "@/app/components/Hero";
-import { RegionCard } from "@/app/components/RegionCard";
-import { FeaturedProductsCarousel } from "@/app/components/FeaturedProductsCarousel";
-import { OurStory } from "@/app/components/OurStory";
-import { KuzaDada } from "@/app/components/KuzaDada";
-import { CustomerReview } from "@/app/components/CustomerReview";
-import { Sponsors } from "@/app/components/Sponsors";
+import { AnnouncementBar } from "@/components/AnnouncementBar";
+import { Hero } from "@/components/Hero";
+import { RegionCard } from "@/components/RegionCard";
+import { FeaturedProductsCarousel } from "@/components/FeaturedProductsCarousel";
+import { OurStory } from "@/components/OurStory";
+import { KuzaDada } from "@/components/KuzaDada";
+import { CustomerReview } from "@/components/CustomerReview";
+import { Sponsors } from "@/components/Sponsors";
 import type { Product, Category } from "@/app/types";
-import { getCategoryShopUrl } from "@/app/lib/catalog-api";
-import { KULETA_SHOP_BASE_URL } from "@/app/config";
+import { getCategoryShopUrl } from "@/lib/catalog-api";
+import { KULETA_SHOP_BASE_URL } from "@/config";
 
 interface HomePageContentProps {
   products: Product[];

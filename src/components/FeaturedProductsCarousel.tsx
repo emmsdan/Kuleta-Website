@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Slider from "react-slick";
-import { ProductCard } from "@/app/components/ProductCard";
+import { ProductCard } from "@/components/ProductCard";
 import type { Product } from "@/app/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";

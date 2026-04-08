@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Header } from "@/app/components/Header";
-import { Footer } from "@/app/components/Footer";
-import { Toaster } from "@/app/components/ui/sonner";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 import "@/styles/index.css";
 
 export const metadata: Metadata = {

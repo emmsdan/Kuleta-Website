@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Play, Award, BookOpen, Users, TrendingUp } from "lucide-react";
 import Link from "next/link";
 

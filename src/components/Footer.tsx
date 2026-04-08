@@ -1,11 +1,11 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Instagram, Linkedin } from "lucide-react";
 import { toast } from "sonner";
-import { CONTACT_EMAIL, KULETA_SHOP_BASE_URL, SOCIAL_LINKS } from "@/app/config";
+import { CONTACT_EMAIL, KULETA_SHOP_BASE_URL, SOCIAL_LINKS } from "@/config";
 import Link from "next/link";
 
 export function Footer() {

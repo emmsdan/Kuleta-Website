@@ -1,6 +1,6 @@
 "use client";
 
-import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 
 const mandaImage = "/assets/c3fb5af5eb9b460f4206a2cc93c7b7f159a5893c.png";
 const kwameImage = "/assets/0781dbd8f8e47b7b7a2635ca5190583ab69776e2.png";

@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/app/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/app/components/ui/card";
-import { Badge } from "@/app/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Star } from "lucide-react";
 import type { Product } from "@/app/types";
 

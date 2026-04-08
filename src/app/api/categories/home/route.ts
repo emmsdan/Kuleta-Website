@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getHomeCategoriesWithFallback } from "@/app/lib/catalog-api";
+import { getHomeCategoriesWithFallback } from "@/lib/catalog-api";
 
 export async function GET() {
   const result = await getHomeCategoriesWithFallback();

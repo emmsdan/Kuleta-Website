@@ -1,5 +1,5 @@
 import { Linkedin } from "lucide-react";
-import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 
 const thereseImage = "/assets/images/therese-kayikwamba-wagner.png";
 const kennethAsherImage = "/assets/images/kenneth-asher.png";
