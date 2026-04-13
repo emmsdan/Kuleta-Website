@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name:  Regenerate the Prisma client
+        run: pnpm prisma generate
+
       - name: Copy environment variable
         run: cp -rf ../.env.template ./.env
 
