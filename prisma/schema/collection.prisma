@@ -1,0 +1,19 @@
+
+model CmsCollectionItem {
+  id          String   @id @default(cuid())
+  collection  String
+  slug        String?
+  title       String
+  subtitle    String?
+  body        String?
+  imageUrl    String?
+  linkUrl     String?
+  metadata    Json?
+  sortOrder   Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([collection, sortOrder])
+  @@unique([collection, slug])
+}
