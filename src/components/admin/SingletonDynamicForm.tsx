@@ -134,10 +134,16 @@ function defaultArrayItem(source: JsonValue[]): JsonValue {
   return "";
 }
 
-function labelFromPath(path: PathPart[]) {
+function labelFromPath(path: PathPart[], fullKey?: string) {
   if (path.length === 0) {
     return "N/A";
   }
+  
+  // Use the full key if provided for better context
+  if (fullKey && path.length === 1) {
+    return toSentenceCase(String(fullKey).replace(/\./g, " ").replace(/-/g, " "));
+  }
+  
   return toSentenceCase(String(path[path.length - 1]));
 }
 
@@ -223,19 +229,19 @@ export function SingletonDynamicForm({ value, onChange }: SingletonDynamicFormPr
           <div className="space-y-2 rounded-md border p-3">
             {node.map((item, index) => {
               const itemPath = [...path, index];
-              const itemLabel = `${labelFromPath(path)}[${index}]`;
+              const baseLabel = labelFromPath(path);
+              const itemLabel = `${baseLabel} Item ${index + 1}`;
 
               return (
                 <div key={itemLabel} className="flex items-start gap-2">
                   <div className="flex-1">
-                    <p className="mb-1 text-xs text-gray-500">{toSentenceCase(itemLabel)}
-
-                    </p>
+                    <label className="mb-1 text-xs font-medium text-gray-600">{itemLabel}</label>
                     {renderNode((item as JsonValue) ?? "", itemPath, depth + 1)}
                   </div>
                   <Button
                     type="button"
                     variant="outline"
+                    size="sm"
                     onClick={() => onChange(removeArrayIndex(value, path, index))}
                   >
                     Remove
@@ -246,6 +252,7 @@ export function SingletonDynamicForm({ value, onChange }: SingletonDynamicFormPr
             <Button
               type="button"
               variant="outline"
+              size="sm"
               onClick={() => onChange(pushToArray(value, path, defaultArrayItem(node)))}
             >
               Add Item
@@ -258,11 +265,12 @@ export function SingletonDynamicForm({ value, onChange }: SingletonDynamicFormPr
         <div className="space-y-3 rounded-md border p-3">
           {node.map((item, index) => (
             <div key={`${labelFromPath(path)}-${index}`} className="rounded-md border p-3 bg-gray-50">
-              <div className="mb-2 flex items-center justify-between">
-                <p className="text-sm font-medium">{labelFromPath(path)}[{index}]</p>
+              <div className="mb-3 flex items-center justify-between">
+                <h4 className="text-sm font-semibold">{labelFromPath(path)} #{index + 1}</h4>
                 <Button
                   type="button"
                   variant="outline"
+                  size="sm"
                   onClick={() => onChange(removeArrayIndex(value, path, index))}
                 >
                   Remove
@@ -274,9 +282,10 @@ export function SingletonDynamicForm({ value, onChange }: SingletonDynamicFormPr
           <Button
             type="button"
             variant="outline"
+            size="sm"
             onClick={() => onChange(pushToArray(value, path, defaultArrayItem(node)))}
           >
-            Add Item
+            Add {labelFromPath(path)}
           </Button>
         </div>
       );
@@ -286,10 +295,9 @@ export function SingletonDynamicForm({ value, onChange }: SingletonDynamicFormPr
       <div className="space-y-3 rounded-md border p-3">
         {Object.entries(node).map(([key, child]) => (
           <div key={key} className="space-y-1">
-            <p className="text-sm font-medium text-gray-700">
-                {toSentenceCase(key)}
-
-            </p>
+            <label className="block text-sm font-medium text-gray-700">
+              {toSentenceCase(key.replace(/\./g, " ").replace(/-/g, " "))}
+            </label>
             {renderNode(child, [...path, key], depth + 1)}
           </div>
         ))}

@@ -22,8 +22,8 @@ export default function AdminCollectionsPage() {
 
   return (
     <AdminShell
-      title="Collection Content"
-      subtitle="Collections are item lists. Click a collection to open its table and edit entries."
+      title="Collections"
+      subtitle="Collections are lists of items you can manage. Click on a collection to view and edit its items."
     >
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse text-sm">

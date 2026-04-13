@@ -60,7 +60,7 @@ export function HomePageContent({
   featuredIn,
 }: HomePageContentProps) {
   const handleAddToCart = (product: Product) => {
-    window.location.href = `${shopBaseUrl}/search?product/${String(product.id)}`;
+    window.location.href = `${shopBaseUrl}/search?keyword=${String(product.id)}`;
   };
 
   return (

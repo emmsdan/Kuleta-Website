@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { Button } from "@/components/ui/button";
+import { toSentenceCase } from "@/lib/string";
 
 type CollectionItem = {
   id: string;
@@ -16,9 +17,14 @@ type CollectionItem = {
   isPublished: boolean;
 };
 
+function getCollectionFormName(collection: string): string {
+  return toSentenceCase(collection.replace(/-/g, " "));
+}
+
 export default function AdminCollectionItemsPage() {
   const params = useParams<{ collection: string }>();
   const collection = useMemo(() => decodeURIComponent(params.collection), [params.collection]);
+  const collectionFormName = useMemo(() => getCollectionFormName(collection), [collection]);
   const [items, setItems] = useState<CollectionItem[]>([]);
 
   useEffect(() => {
@@ -33,15 +39,15 @@ export default function AdminCollectionItemsPage() {
 
   return (
     <AdminShell
-      title={`Collection: ${collection}`}
-      subtitle="Items are listed in a table. Open any item to edit on a standalone page."
+      title={collectionFormName}
+      subtitle="Manage the items in this collection. Open any item to edit it or create new ones."
     >
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <Link href="/admin/collections">
           <Button variant="outline">Back to Collections</Button>
         </Link>
         <Link href={`/admin/collections/${encodeURIComponent(collection)}/new`}>
-          <Button>Create New Item</Button>
+          <Button>Add New {collectionFormName}</Button>
         </Link>
       </div>
 

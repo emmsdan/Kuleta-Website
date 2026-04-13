@@ -3,19 +3,27 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
+import { toast } from "sonner";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { SingletonDynamicForm } from "@/components/admin/SingletonDynamicForm";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { toSentenceCase } from "@/lib/string";
 
 type JsonPrimitive = string | number | boolean | null;
 type JsonValue = JsonPrimitive | JsonValue[] | { [key: string]: JsonValue };
 
+function getFormName(key: string): string {
+  // Convert keys like "home.page" to "Home page"
+  // and "get-involved.page" to "Get involved page"
+  return toSentenceCase(key.replace(/\./g, " ").replace(/-/g, " "));
+}
+
 export default function AdminSingletonDetailPage() {
   const params = useParams<{ key: string }>();
   const key = useMemo(() => decodeURIComponent(params.key), [params.key]);
+  const formName = useMemo(() => getFormName(key), [key]);
   const [value, setValue] = useState<JsonValue | null>(null);
-  const [status, setStatus] = useState("");
   const [rawMode, setRawMode] = useState(false);
   const [rawText, setRawText] = useState("");
 
@@ -42,31 +50,26 @@ export default function AdminSingletonDetailPage() {
     });
 
     if (!response.ok) {
-      setStatus("Failed to save singleton.");
+      toast.error(`Failed to save ${formName}.`);
       return;
     }
 
-    setStatus("Singleton updated.");
+    toast.success(`${formName} updated successfully.`);
   }
 
   function saveRawJson() {
     try {
       const parsed = JSON.parse(rawText) as JsonValue;
       setValue(parsed);
-      setStatus("Raw JSON parsed. Save to persist changes.");
+      toast.info("Raw JSON parsed. Click save to persist changes.");
     } catch {
-      setStatus("Invalid JSON in raw mode.");
+      toast.error("Invalid JSON in raw mode.");
     }
   }
 
-  return (
-    <AdminShell
-      title={`Edit Singleton: ${key}`}
-      subtitle="Form fields are auto-generated from the JSON shape. You can switch to raw JSON mode when needed."
-    >
-      <div className="mb-4 flex flex-wrap items-center gap-2">
+  const ActionBar = ( <div className="my-4 flex flex-wrap items-center gap-2">
         <Link href="/admin/singletons">
-          <Button variant="outline">Back to Singletons</Button>
+          <Button variant="outline">Back to Content Sections</Button>
         </Link>
         <Button variant={rawMode ? "outline" : "default"} onClick={() => setRawMode(false)}>
           Form Mode
@@ -74,10 +77,15 @@ export default function AdminSingletonDetailPage() {
         <Button variant={rawMode ? "default" : "outline"} onClick={() => setRawMode(true)}>
           Raw JSON Mode
         </Button>
-        <Button onClick={save}>Save Singleton</Button>
-      </div>
+        <Button onClick={save}>Save {formName}</Button>
+      </div>)
 
-      {status ? <p className="mb-4 text-sm text-[#025143]">{status}</p> : null}
+  return (
+    <AdminShell
+      title={`Edit ${formName}`}
+      subtitle="Form fields are auto-generated from the content structure. You can switch to raw JSON mode when needed."
+    >
+     {ActionBar}
 
       {value === null ? (
         <p className="text-sm text-gray-500">Loading singleton...</p>
@@ -101,6 +109,8 @@ export default function AdminSingletonDetailPage() {
           }}
         />
       )}
+     {value !== null && ActionBar}
+
     </AdminShell>
   );
 }

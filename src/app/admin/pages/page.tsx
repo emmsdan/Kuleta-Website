@@ -59,7 +59,7 @@ export default function AdminPagesPage() {
   return (
     <AdminShell
       title="Pages"
-      subtitle="Each row maps a website page to its singleton and collection editing entry points."
+      subtitle="Manage content for each page. Edit the page content section or the items in the collection."
     >
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse text-sm">
@@ -67,8 +67,8 @@ export default function AdminPagesPage() {
             <tr className="border-b bg-gray-50 text-left">
               <th className="px-3 py-2">Page</th>
               <th className="px-3 py-2">Route</th>
-              <th className="px-3 py-2">Singleton</th>
-              <th className="px-3 py-2">Collection</th>
+              <th className="px-3 py-2">Content Section</th>
+              <th className="px-3 py-2">Items Collection</th>
               <th className="px-3 py-2">Actions</th>
             </tr>
           </thead>
@@ -77,17 +77,17 @@ export default function AdminPagesPage() {
               <tr key={row.page} className="border-b">
                 <td className="px-3 py-2 font-medium">{row.page}</td>
                 <td className="px-3 py-2">{row.route}</td>
-                <td className="px-3 py-2">{row.singletonKey}</td>
-                <td className="px-3 py-2">{row.collection}</td>
+                <td className="px-3 py-2 text-xs text-gray-600">{row.singletonKey}</td>
+                <td className="px-3 py-2 text-xs text-gray-600">{row.collection}</td>
                 <td className="px-3 py-2">
                   <div className="flex flex-wrap gap-2">
                     <Link href={`/admin/singletons/${encodeURIComponent(row.singletonKey)}`}>
                       <Button size="sm" variant="outline">
-                        Edit Singleton
+                        Edit Content
                       </Button>
                     </Link>
                     <Link href={`/admin/collections/${encodeURIComponent(row.collection)}`}>
-                      <Button size="sm">Edit Collection</Button>
+                      <Button size="sm">Edit Items</Button>
                     </Link>
                   </div>
                 </td>

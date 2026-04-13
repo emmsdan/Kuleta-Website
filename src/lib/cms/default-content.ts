@@ -91,7 +91,7 @@ export const DEFAULT_SINGLETONS: SingletonSeed[] = [
       ourStoryTitle: "Our Story",
       kuzaTitle: "Kuza Dada",
       reviewQuote:
-        "Kuleta has transformed how I access authentic African products. The quality is exceptional and shipping is always reliable. I feel connected to my roots with every purchase!",
+        "This is emmanuel saying Kuleta changed Africa's ecommerce market",
       reviewAuthor: "Kuleta Customer",
     },
   },
@@ -359,7 +359,7 @@ export const DEFAULT_COLLECTION_ITEMS: CollectionSeed[] = [
     slug: "main",
     title: "Kuleta Customer",
     body:
-      "Kuleta has transformed how I access authentic African products. The quality is exceptional and shipping is always reliable. I feel connected to my roots with every purchase!",
+      "This is Emmanuel saying Kuleta changed Africa's ecommerce market",
     sortOrder: 1,
   },
   {

@@ -24,8 +24,8 @@ export default function AdminSingletonsPage() {
 
   return (
     <AdminShell
-      title="Singleton Content"
-      subtitle="Each singleton is a single JSON document. Click edit to open an auto-generated form."
+      title="Content Sections"
+      subtitle="Each content section is a single document that controls site-wide content. Click edit to update it."
     >
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse text-sm">
