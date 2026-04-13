@@ -31,6 +31,9 @@ jobs:
       - name: Copy environment variable
         run: cp -rf ../.env.template ./.env
 
+      - name: Remove old build
+        run: rm -rf .next
+
       - name: Build project
         run: pnpm run build
 
