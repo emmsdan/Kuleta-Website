@@ -65,6 +65,6 @@ export function getCategoryShopUrl(category: Category): string {
     return category.links.products;
   }
 
-  const fallbackShopUrl = process.env.NEXT_PUBLIC_KULETA_SHOP_BASE_URL || "https://dev-preview-1025.kuleta.io";
+  const fallbackShopUrl = process.env.NEXT_PUBLIC_KULETA_SHOP_BASE_URL || "https://shop.kuleta.io";
   return `${fallbackShopUrl}/category/${encodeURIComponent(category.slug || String(category.id))}`;
 }

@@ -4,260 +4,260 @@
             "id": 4,
             "slug": "men's fashion",
             "name": "Men Clothing & Fashion",
-            "banner": "https://dev-preview-1025.kuleta.io/public/uploads/all/mC1gyy1FcAJRpkEYETmpwPoHt08XWxagpnulifs9.webp",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/uploads/all/af62eWl4yolGhH2XvzrQaYUyAMOz5frtaIStUbZy.webp",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/qfXlJMYNOIxR36JOhGE28mXllBcbChE74D1bbWFY.webp",
+            "banner": "https://shop.kuleta.io/public/uploads/all/mC1gyy1FcAJRpkEYETmpwPoHt08XWxagpnulifs9.webp",
+            "cover_image": "https://shop.kuleta.io/public/uploads/all/af62eWl4yolGhH2XvzrQaYUyAMOz5frtaIStUbZy.webp",
+            "icon": "https://shop.kuleta.io/public/uploads/all/qfXlJMYNOIxR36JOhGE28mXllBcbChE74D1bbWFY.webp",
             "number_of_children": 3,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/4",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/4"
+                "products": "https://shop.kuleta.io/api/v2/products/category/4",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/4"
             }
         },
         {
             "id": 5,
             "slug": "women's fashion",
             "name": "Women Clothing & Fashion",
-            "banner": "https://dev-preview-1025.kuleta.io/public/uploads/all/ZqdLXh7TJZxYOQ8rz0n1cSPCqLeI83nY05CPRsd0.webp",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/uploads/all/cU0zxIdslWJz178XHyJfUncnJv8keDopinZcOHSd.webp",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/xIlOUwjNG23vkpxsGKJMytX2tYqbCnd8QLmHVMID.webp",
+            "banner": "https://shop.kuleta.io/public/uploads/all/ZqdLXh7TJZxYOQ8rz0n1cSPCqLeI83nY05CPRsd0.webp",
+            "cover_image": "https://shop.kuleta.io/public/uploads/all/cU0zxIdslWJz178XHyJfUncnJv8keDopinZcOHSd.webp",
+            "icon": "https://shop.kuleta.io/public/uploads/all/xIlOUwjNG23vkpxsGKJMytX2tYqbCnd8QLmHVMID.webp",
             "number_of_children": 2,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/5",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/5"
+                "products": "https://shop.kuleta.io/api/v2/products/category/5",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/5"
             }
         },
         {
             "id": 6,
             "slug": "demo-category-3",
             "name": "Motor Bike Accessories",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/znlvTe2kUsu5qqzvHDjfBX9XXNO9AMimtXHtazdh.png",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/uploads/all/znlvTe2kUsu5qqzvHDjfBX9XXNO9AMimtXHtazdh.png",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/6",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/6"
+                "products": "https://shop.kuleta.io/api/v2/products/category/6",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/6"
             }
         },
         {
             "id": 7,
             "slug": "smartphone-accessories-ww79z",
             "name": "Smartphone Accessories",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/uploads/all/lunbsP5gcoAx47ioB4qXnxeHrBQD7I6bklT5kOKi.webp",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/XK9ZRAhKwUQf0bQQTx80eO0caGJI24Lvpg92D4yp.webp",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/uploads/all/lunbsP5gcoAx47ioB4qXnxeHrBQD7I6bklT5kOKi.webp",
+            "icon": "https://shop.kuleta.io/public/uploads/all/XK9ZRAhKwUQf0bQQTx80eO0caGJI24Lvpg92D4yp.webp",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/7",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/7"
+                "products": "https://shop.kuleta.io/api/v2/products/category/7",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/7"
             }
         },
         {
             "id": 8,
             "slug": "car-accessories-wdgbh",
             "name": "Car Accessories",
-            "banner": "https://dev-preview-1025.kuleta.io/public/uploads/all/2TEsCP0jm5Y064bQ63LUaYqKkvJxlTml5OYfYYsj.webp",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/uploads/all/NUjIbtLt8fBeLG7N4ZF24zCiPImPiKF3PeeAEEZp.webp",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/Kqrv805WBtUhh603yGA4MCboaYctCOl6bQqHR12p.png",
+            "banner": "https://shop.kuleta.io/public/uploads/all/2TEsCP0jm5Y064bQ63LUaYqKkvJxlTml5OYfYYsj.webp",
+            "cover_image": "https://shop.kuleta.io/public/uploads/all/NUjIbtLt8fBeLG7N4ZF24zCiPImPiKF3PeeAEEZp.webp",
+            "icon": "https://shop.kuleta.io/public/uploads/all/Kqrv805WBtUhh603yGA4MCboaYctCOl6bQqHR12p.png",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/8",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/8"
+                "products": "https://shop.kuleta.io/api/v2/products/category/8",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/8"
             }
         },
         {
             "id": 9,
             "slug": "Hot-Categories-e5aCE",
             "name": "Hot Categories",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/9",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/9"
+                "products": "https://shop.kuleta.io/api/v2/products/category/9",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/9"
             }
         },
         {
             "id": 10,
             "slug": "Wedding--events-IqPiS",
             "name": "Wedding & events",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/10",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/10"
+                "products": "https://shop.kuleta.io/api/v2/products/category/10",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/10"
             }
         },
         {
             "id": 11,
             "slug": "Outwear--jackets-Wn647",
             "name": "Outwear & jackets",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/11",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/11"
+                "products": "https://shop.kuleta.io/api/v2/products/category/11",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/11"
             }
         },
         {
             "id": 12,
             "slug": "Underwear--Loungewear-Accessories-mLj5J",
             "name": "Underwear & Loungewear Accessories",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/12",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/12"
+                "products": "https://shop.kuleta.io/api/v2/products/category/12",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/12"
             }
         },
         {
             "id": 17,
             "slug": "alarm-ofhkb",
             "name": "Alarm",
-            "banner": "https://dev-preview-1025.kuleta.io/public/uploads/all/DNneptzVoAzbkk8FTza4iJsS7tDPBMIojUfOG5b2.png",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/uploads/all/DNneptzVoAzbkk8FTza4iJsS7tDPBMIojUfOG5b2.png",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/uploads/all/DNneptzVoAzbkk8FTza4iJsS7tDPBMIojUfOG5b2.png",
+            "cover_image": "https://shop.kuleta.io/public/uploads/all/DNneptzVoAzbkk8FTza4iJsS7tDPBMIojUfOG5b2.png",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 4,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/17",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/17"
+                "products": "https://shop.kuleta.io/api/v2/products/category/17",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/17"
             }
         },
         {
             "id": 18,
             "slug": "Motorcycle-Stand-rzJwJ",
             "name": "Motorcycle Stand",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 2,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/18",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/18"
+                "products": "https://shop.kuleta.io/api/v2/products/category/18",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/18"
             }
         },
         {
             "id": 19,
             "slug": "outdoor--patio-xuvpy",
             "name": "Outdoor & Patio",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/FQi1pjHCkx1DE9Buxlhmur7t9D56QJIYFnRFWC9D.webp",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/uploads/all/FQi1pjHCkx1DE9Buxlhmur7t9D56QJIYFnRFWC9D.webp",
             "number_of_children": 2,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/19",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/19"
+                "products": "https://shop.kuleta.io/api/v2/products/category/19",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/19"
             }
         },
         {
             "id": 20,
             "slug": "kitchen-mhwhp",
             "name": "Kitchen",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/uploads/all/UrLfLgDDKPVqWnn3UwVloxV4sF1KiOnkKPfKg36m.webp",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/ThoZTTTpl5g2Mbh1BWsQNkfXefoB4tL6jgdjcO0j.webp",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/uploads/all/UrLfLgDDKPVqWnn3UwVloxV4sF1KiOnkKPfKg36m.webp",
+            "icon": "https://shop.kuleta.io/public/uploads/all/ThoZTTTpl5g2Mbh1BWsQNkfXefoB4tL6jgdjcO0j.webp",
             "number_of_children": 3,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/20",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/20"
+                "products": "https://shop.kuleta.io/api/v2/products/category/20",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/20"
             }
         },
         {
             "id": 21,
             "slug": "household-appliances-ymtvn",
             "name": "Household Appliances",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/fFSujLdnN19gRMbpzq25wiwNFXs2wDqOFv1AwB5I.webp",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/uploads/all/fFSujLdnN19gRMbpzq25wiwNFXs2wDqOFv1AwB5I.webp",
             "number_of_children": 3,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/21",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/21"
+                "products": "https://shop.kuleta.io/api/v2/products/category/21",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/21"
             }
         },
         {
             "id": 22,
             "slug": "bakery--bread-kclhl",
             "name": "Bakery & Bread",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/nBHQ2KolQTzqezXbKFKZBWbGuUQFyhMT5IGm09nW.png",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/uploads/all/nBHQ2KolQTzqezXbKFKZBWbGuUQFyhMT5IGm09nW.png",
             "number_of_children": 3,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/22",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/22"
+                "products": "https://shop.kuleta.io/api/v2/products/category/22",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/22"
             }
         },
         {
             "id": 23,
             "slug": "body-fitness-873u8",
             "name": "Body Fitness",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/uploads/all/yPZbu1apEIPKP3LiDs6lR2q4Auk2SYO4wsrbu3Il.png",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/uploads/all/yPZbu1apEIPKP3LiDs6lR2q4Auk2SYO4wsrbu3Il.png",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/23",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/23"
+                "products": "https://shop.kuleta.io/api/v2/products/category/23",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/23"
             }
         },
         {
             "id": 24,
             "slug": "Vitamins--Supplements-lMmHi",
             "name": "Vitamins & Supplements",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/24",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/24"
+                "products": "https://shop.kuleta.io/api/v2/products/category/24",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/24"
             }
         },
         {
             "id": 25,
             "slug": "Kids--Toy-fRtrx",
             "name": "Kids & Toy",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/25",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/25"
+                "products": "https://shop.kuleta.io/api/v2/products/category/25",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/25"
             }
         },
         {
             "id": 46,
             "slug": "Accessories-a83xY",
             "name": "Accessories",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/46",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/46"
+                "products": "https://shop.kuleta.io/api/v2/products/category/46",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/46"
             }
         },
         {
             "id": 47,
             "slug": "Bottom-KVdCm",
             "name": "Bottom",
-            "banner": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "cover_image": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
-            "icon": "https://dev-preview-1025.kuleta.io/public/assets/img/placeholder.jpg",
+            "banner": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "cover_image": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
+            "icon": "https://shop.kuleta.io/public/assets/img/placeholder.jpg",
             "number_of_children": 0,
             "links": {
-                "products": "https://dev-preview-1025.kuleta.io/api/v2/products/category/47",
-                "sub_categories": "https://dev-preview-1025.kuleta.io/api/v2/sub-categories/47"
+                "products": "https://shop.kuleta.io/api/v2/products/category/47",
+                "sub_categories": "https://shop.kuleta.io/api/v2/sub-categories/47"
             }
         }
     ],

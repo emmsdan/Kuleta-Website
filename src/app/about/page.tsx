@@ -142,7 +142,7 @@ export default async function AboutPage() {
           <h2 className="text-4xl mb-6">{about.ctaTitle || "Join Our Journey"}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">{about.ctaText}</p>
           <a
-            href={about.ctaLink || "https://dev-preview-1025.kuleta.io"}
+            href={about.ctaLink || "https://shop.kuleta.io"}
             target="_blank"
             rel="noreferrer"
             className="px-8 py-3 bg-gradient-to-r from-[#177F00] to-[#E99C00] text-white rounded-full hover:shadow-lg transition-shadow"

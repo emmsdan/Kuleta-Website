@@ -45,7 +45,7 @@ export default async function HomePage() {
       categories={categories}
       products={productsResult.products}
       announcementMessage={announcement.message || ""}
-      shopBaseUrl={siteConfig.shopBaseUrl || "https://dev-preview-1025.kuleta.io"}
+      shopBaseUrl={siteConfig.shopBaseUrl || "https://shop.kuleta.io"}
       hero={{
         headlineBefore: hero.headlineBefore || "Bringing the local",
         highlighted: hero.highlighted || "African Market",

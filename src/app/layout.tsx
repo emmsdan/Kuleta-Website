@@ -38,7 +38,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     newsletterPlaceholder?: string;
   }>("footer.brand", {});
 
-  const shopBaseUrl = siteConfig.shopBaseUrl || "https://dev-preview-1025.kuleta.io";
+  const shopBaseUrl = siteConfig.shopBaseUrl || "https://shop.kuleta.io";
 
   return (
     <html lang="en">
