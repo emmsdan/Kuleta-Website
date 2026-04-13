@@ -1,4 +1,4 @@
-import { Award, BookOpen, Play, TrendingUp, Users } from "lucide-react";
+import { Award, BookOpen, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getCollection, getSingleton } from "@/lib/cms";
@@ -29,29 +29,15 @@ export default async function KuzaDadaPage() {
     getCollection("kuza.stories"),
   ]);
 
+
+  const KuzaDadaVideoButtonWrapper = (await import("./KuzaDadaVideoButtonWrapper")).default;
+
   return (
     <div className="min-h-screen bg-white">
       <section className="bg-gradient-to-br from-[#177F00]/10 via-white to-[#E99C00]/10 py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <button
-              type="button"
-              onClick={() => {
-                if (kuzaPage.videoUrl) {
-                  window.open(kuzaPage.videoUrl, "_blank", "noopener,noreferrer");
-                }
-              }}
-              className="relative h-[400px] bg-gradient-to-br from-green-100 to-yellow-100 rounded-2xl overflow-hidden group cursor-pointer w-full text-left"
-              aria-label="Play Kuza Dada video"
-            >
-              <img src={kuzaPage.heroImage || ""} alt="Kuza Dada" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#177F00]/30 to-[#E99C00]/30 flex items-center justify-center group-hover:from-[#177F00]/40 group-hover:to-[#E99C00]/40 transition-colors">
-                <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                  <Play className="h-10 w-10 text-[#177F00] ml-1" />
-                </div>
-              </div>
-            </button>
-
+            <KuzaDadaVideoButtonWrapper videoUrl={kuzaPage.videoUrl} heroImage={kuzaPage.heroImage} />
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl bg-gradient-to-r from-[#177F00] to-[#E99C00] bg-clip-text text-transparent">
                 {kuzaPage.heroTitle || "Kuza Dada"}
