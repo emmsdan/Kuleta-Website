@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { AdminShell } from "@/components/admin/AdminShell";
+import { AdminShell } from "@/components/back-office-console/AdminShell";
 import { Button } from "@/components/ui/button";
 
 const PAGE_ROWS = [
@@ -81,12 +81,12 @@ export default function AdminPagesPage() {
                 <td className="px-3 py-2 text-xs text-gray-600">{row.collection}</td>
                 <td className="px-3 py-2">
                   <div className="flex flex-wrap gap-2">
-                    <Link href={`/admin/singletons/${encodeURIComponent(row.singletonKey)}`}>
+                    <Link href={`/back-office-console/singletons/${encodeURIComponent(row.singletonKey)}`}>
                       <Button size="sm" variant="outline">
                         Edit Content
                       </Button>
                     </Link>
-                    <Link href={`/admin/collections/${encodeURIComponent(row.collection)}`}>
+                    <Link href={`/back-office-console/collections/${encodeURIComponent(row.collection)}`}>
                       <Button size="sm">Edit Items</Button>
                     </Link>
                   </div>

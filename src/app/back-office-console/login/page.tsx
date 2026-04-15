@@ -18,7 +18,7 @@ export default function AdminLoginPage() {
     setLoading(true);
     setStatus("");
 
-    const response = await fetch("/api/admin/auth/login", {
+    const response = await fetch("/api/back-office-console/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -32,7 +32,7 @@ export default function AdminLoginPage() {
       return;
     }
 
-    const nextPath = searchParams.get("next") || "/admin/pages";
+    const nextPath = searchParams.get("next") || "/back-office-console/pages";
     router.replace(nextPath);
     router.refresh();
   }

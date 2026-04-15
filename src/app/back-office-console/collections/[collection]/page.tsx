@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import { AdminShell } from "@/components/admin/AdminShell";
+import { AdminShell } from "@/components/back-office-console/AdminShell";
 import { Button } from "@/components/ui/button";
 import { toSentenceCase } from "@/lib/string";
 
@@ -29,7 +29,7 @@ export default function AdminCollectionItemsPage() {
 
   useEffect(() => {
     void (async () => {
-      const response = await fetch(`/api/admin/collections/${encodeURIComponent(collection)}`, {
+      const response = await fetch(`/api/back-office-console/collections/${encodeURIComponent(collection)}`, {
         cache: "no-store",
       });
       const data = await response.json().catch(() => ({ items: [] }));
@@ -43,10 +43,10 @@ export default function AdminCollectionItemsPage() {
       subtitle="Manage the items in this collection. Open any item to edit it or create new ones."
     >
       <div className="mb-4 flex flex-wrap items-center gap-2">
-        <Link href="/admin/collections">
+        <Link href="/back-office-console/collections">
           <Button variant="outline">Back to Collections</Button>
         </Link>
-        <Link href={`/admin/collections/${encodeURIComponent(collection)}/new`}>
+        <Link href={`/back-office-console/collections/${encodeURIComponent(collection)}/new`}>
           <Button>Add New {collectionFormName}</Button>
         </Link>
       </div>
@@ -72,7 +72,7 @@ export default function AdminCollectionItemsPage() {
                 <td className="px-3 py-2">{item.sortOrder}</td>
                 <td className="px-3 py-2">{item.isPublished ? "Yes" : "No"}</td>
                 <td className="px-3 py-2">
-                  <Link href={`/admin/collections/${encodeURIComponent(collection)}/${item.id}`}>
+                  <Link href={`/back-office-console/collections/${encodeURIComponent(collection)}/${item.id}`}>
                     <Button size="sm">Edit</Button>
                   </Link>
                 </td>

@@ -18,9 +18,9 @@ type AdminShellProps = {
 };
 
 const NAV_ITEMS = [
-  { label: "Pages", href: "/admin/pages" },
-  { label: "Singleton Content", href: "/admin/singletons" },
-  { label: "Collection Content", href: "/admin/collections" },
+  { label: "Pages", href: "/back-office-console/pages" },
+  { label: "Main Content Area", href: "/back-office-console/singletons" },
+  { label: "Collection/Section Content", href: "/back-office-console/collections" },
 ];
 
 export function AdminShell({ title, subtitle, children }: AdminShellProps) {
@@ -30,9 +30,9 @@ export function AdminShell({ title, subtitle, children }: AdminShellProps) {
 
   useEffect(() => {
     void (async () => {
-      const response = await fetch("/api/admin/auth/me", { cache: "no-store" });
+      const response = await fetch("/api/back-office-console/auth/me", { cache: "no-store" });
       if (response.status === 401) {
-        router.replace("/admin/login");
+        router.replace("/back-office-console/login");
         return;
       }
 
@@ -47,8 +47,8 @@ export function AdminShell({ title, subtitle, children }: AdminShellProps) {
   );
 
   async function logout() {
-    await fetch("/api/admin/auth/logout", { method: "POST" });
-    router.replace("/admin/login");
+    await fetch("/api/back-office-console/auth/logout", { method: "POST" });
+    router.replace("/back-office-console/login");
     router.refresh();
   }
 

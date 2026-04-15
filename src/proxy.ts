@@ -22,10 +22,10 @@ async function isAuthenticated(request: NextRequest) {
 
 export default async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const isAdminApi = pathname.startsWith("/api/admin");
-  const isAuthApi = pathname.startsWith("/api/admin/auth");
-  const isAdminPage = pathname.startsWith("/admin");
-  const isLoginPage = pathname === "/admin/login";
+  const isAdminApi = pathname.startsWith("/api/back-office-console");
+  const isAuthApi = pathname.startsWith("/api/back-office-console/auth");
+  const isAdminPage = pathname.startsWith("/back-office-console");
+  const isLoginPage = pathname === "/back-office-console/login";
 
   if ((!isAdminApi && !isAdminPage) || isAuthApi || isLoginPage) {
     return NextResponse.next();
@@ -40,11 +40,11 @@ export default async function proxy(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const loginUrl = new URL("/admin/login", request.url);
+  const loginUrl = new URL("/back-office-console/login", request.url);
   loginUrl.searchParams.set("next", pathname);
   return NextResponse.redirect(loginUrl);
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: ["/back-office-console/:path*", "/api/back-office-console/:path*"],
 };

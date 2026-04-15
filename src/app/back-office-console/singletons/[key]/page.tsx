@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
-import { AdminShell } from "@/components/admin/AdminShell";
-import { SingletonDynamicForm } from "@/components/admin/SingletonDynamicForm";
+import { AdminShell } from "@/components/back-office-console/AdminShell";
+import { SingletonDynamicForm } from "@/components/back-office-console/SingletonDynamicForm";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toSentenceCase } from "@/lib/string";
@@ -29,7 +29,7 @@ export default function AdminSingletonDetailPage() {
 
   useEffect(() => {
     void (async () => {
-      const response = await fetch(`/api/admin/singletons/${encodeURIComponent(key)}`, {
+      const response = await fetch(`/api/back-office-console/singletons/${encodeURIComponent(key)}`, {
         cache: "no-store",
       });
       const data = await response.json().catch(() => ({ value: null }));
@@ -43,7 +43,7 @@ export default function AdminSingletonDetailPage() {
       return;
     }
 
-    const response = await fetch(`/api/admin/singletons/${encodeURIComponent(key)}`, {
+    const response = await fetch(`/api/back-office-console/singletons/${encodeURIComponent(key)}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ value }),
@@ -68,7 +68,7 @@ export default function AdminSingletonDetailPage() {
   }
 
   const ActionBar = ( <div className="my-4 flex flex-wrap items-center gap-2">
-        <Link href="/admin/singletons">
+        <Link href="/back-office-console/singletons">
           <Button variant="outline">Back to Content Sections</Button>
         </Link>
         <Button variant={rawMode ? "outline" : "default"} onClick={() => setRawMode(false)}>

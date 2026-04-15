@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { AdminShell } from "@/components/admin/AdminShell";
+import { AdminShell } from "@/components/back-office-console/AdminShell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -53,7 +53,7 @@ export default function AdminCollectionCreateItemPage() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const response = await fetch(`/api/admin/collections/${encodeURIComponent(collection)}`, {
+    const response = await fetch(`/api/back-office-console/collections/${encodeURIComponent(collection)}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -75,14 +75,14 @@ export default function AdminCollectionCreateItemPage() {
     }
 
     toast.success(`${collectionFormName} item created successfully.`);
-    router.replace(`/admin/collections/${encodeURIComponent(collection)}`);
+    router.replace(`/back-office-console/collections/${encodeURIComponent(collection)}`);
     router.refresh();
   }
 
   return (
     <AdminShell title={`Create New ${collectionFormName} Item`} subtitle="Fill in the details below to add a new item.">
       <div className="mb-4">
-        <Link href={`/admin/collections/${encodeURIComponent(collection)}`}>
+        <Link href={`/back-office-console/collections/${encodeURIComponent(collection)}`}>
           <Button variant="outline">Back to {collectionFormName}</Button>
         </Link>
       </div>

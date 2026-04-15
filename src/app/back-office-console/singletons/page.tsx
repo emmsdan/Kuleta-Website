@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AdminShell } from "@/components/admin/AdminShell";
+import { AdminShell } from "@/components/back-office-console/AdminShell";
 import { Button } from "@/components/ui/button";
 
 type SingletonItem = {
@@ -16,7 +16,7 @@ export default function AdminSingletonsPage() {
 
   useEffect(() => {
     void (async () => {
-      const response = await fetch("/api/admin/singletons", { cache: "no-store" });
+      const response = await fetch("/api/back-office-console/singletons", { cache: "no-store" });
       const data = await response.json().catch(() => ({ items: [] }));
       setItems(data.items || []);
     })();
@@ -46,7 +46,7 @@ export default function AdminSingletonsPage() {
                   </pre>
                 </td>
                 <td className="px-3 py-2">
-                  <Link href={`/admin/singletons/${encodeURIComponent(item.key)}`}>
+                  <Link href={`/back-office-console/singletons/${encodeURIComponent(item.key)}`}>
                     <Button size="sm">Edit</Button>
                   </Link>
                 </td>

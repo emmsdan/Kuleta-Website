@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AdminShell } from "@/components/admin/AdminShell";
+import { AdminShell } from "@/components/back-office-console/AdminShell";
 import { Button } from "@/components/ui/button";
 
 type CollectionRow = {
@@ -14,7 +14,7 @@ export default function AdminCollectionsPage() {
 
   useEffect(() => {
     void (async () => {
-      const response = await fetch("/api/admin/collections", { cache: "no-store" });
+      const response = await fetch("/api/back-office-console/collections", { cache: "no-store" });
       const data = await response.json().catch(() => ({ collections: [] }));
       setCollections((data.collections || []).map((name: string) => ({ name })));
     })();
@@ -38,7 +38,7 @@ export default function AdminCollectionsPage() {
               <tr key={collection.name} className="border-b">
                 <td className="px-3 py-2 font-medium">{collection.name}</td>
                 <td className="px-3 py-2">
-                  <Link href={`/admin/collections/${encodeURIComponent(collection.name)}`}>
+                  <Link href={`/back-office-console/collections/${encodeURIComponent(collection.name)}`}>
                     <Button size="sm">Open Table</Button>
                   </Link>
                 </td>

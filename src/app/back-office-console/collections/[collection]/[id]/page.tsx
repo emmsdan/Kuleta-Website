@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { AdminShell } from "@/components/admin/AdminShell";
+import { AdminShell } from "@/components/back-office-console/AdminShell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -77,7 +77,7 @@ export default function AdminCollectionEditItemPage() {
 
   useEffect(() => {
     void (async () => {
-      const response = await fetch(`/api/admin/collections/${encodeURIComponent(collection)}`, {
+      const response = await fetch(`/api/back-office-console/collections/${encodeURIComponent(collection)}`, {
         cache: "no-store",
       });
       const data = await response.json().catch(() => ({ items: [] }));
@@ -95,7 +95,7 @@ export default function AdminCollectionEditItemPage() {
     }
 
     const response = await fetch(
-      `/api/admin/collections/${encodeURIComponent(collection)}/${item.id}`,
+      `/api/back-office-console/collections/${encodeURIComponent(collection)}/${item.id}`,
       {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -127,7 +127,7 @@ export default function AdminCollectionEditItemPage() {
     }
 
     const response = await fetch(
-      `/api/admin/collections/${encodeURIComponent(collection)}/${item.id}`,
+      `/api/back-office-console/collections/${encodeURIComponent(collection)}/${item.id}`,
       { method: "DELETE" }
     );
 
@@ -137,14 +137,14 @@ export default function AdminCollectionEditItemPage() {
     }
 
     toast.success(`${collectionFormName} item deleted.`);
-    router.replace(`/admin/collections/${encodeURIComponent(collection)}`);
+    router.replace(`/back-office-console/collections/${encodeURIComponent(collection)}`);
     router.refresh();
   }
 
   return (
     <AdminShell title={`Edit ${collectionFormName} Item`} subtitle="Update item fields and save changes.">
       <div className="mb-4 flex flex-wrap gap-2">
-        <Link href={`/admin/collections/${encodeURIComponent(collection)}`}>
+        <Link href={`/back-office-console/collections/${encodeURIComponent(collection)}`}>
           <Button variant="outline">Back to {collectionFormName}</Button>
         </Link>
         <Button variant="outline" onClick={removeItem}>
