@@ -7,6 +7,8 @@ import {
 } from "@/lib/admin-auth";
 
 export async function POST(request: NextRequest) {
+  try {
+
   const body = await request.json().catch(() => null);
   const email = typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
   const password = typeof body?.password === "string" ? body.password : "";
@@ -51,4 +53,8 @@ export async function POST(request: NextRequest) {
   });
 
   return response;
+  } catch (error) {
+    console.error("Login error:", error);
+    return NextResponse.json({ error: "An unexpected error occurred.", details: error instanceof Error ? error.message : String(error) }, { status: 400 });
+  }
 }

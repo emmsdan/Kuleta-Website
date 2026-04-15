@@ -1,20 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
+import { getJwtSecret } from "./lib/admin-auth";
 
 const ADMIN_SESSION_COOKIE = "kuleta_admin_session";
 
-function getJwtSecret() {
-  const secret = process.env.ADMIN_JWT_SECRET;
-  if (secret && secret.length >= 32) {
-    return new TextEncoder().encode(secret);
-  }
 
-  if (process.env.NODE_ENV === "production") {
-    throw new Error("ADMIN_JWT_SECRET must be set and at least 32 characters in production.");
-  }
-
-  return new TextEncoder().encode("dev-only-admin-secret-change-me-please");
-}
 
 async function isAuthenticated(request: NextRequest) {
   const token = request.cookies.get(ADMIN_SESSION_COOKIE)?.value;

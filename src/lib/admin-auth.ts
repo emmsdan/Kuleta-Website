@@ -10,17 +10,17 @@ type AdminSession = {
   email: string;
 };
 
-function getJwtSecret() {
+export function getJwtSecret() {
   const rawSecret = process.env.ADMIN_JWT_SECRET;
   if (rawSecret && rawSecret.length >= 32) {
     return new TextEncoder().encode(rawSecret);
   }
 
-  if (process.env.NODE_ENV === "production") {
+  // if (process.env.NODE_ENV === "production") {
     throw new Error("ADMIN_JWT_SECRET must be set and at least 32 characters in production.");
-  }
+  // }
 
-  return new TextEncoder().encode("dev-only-admin-secret-change-me-please");
+  // return new TextEncoder().encode("dev-only-admin-secret-change-me-please");
 }
 
 export function getAdminSessionCookieName() {
