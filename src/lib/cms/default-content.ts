@@ -91,7 +91,7 @@ export const DEFAULT_SINGLETONS: SingletonSeed[] = [
       ourStoryTitle: "Our Story",
       kuzaTitle: "Kuza Dada",
       reviewQuote:
-        "This is emmanuel saying Kuleta changed Africa's ecommerce market",
+        "",
       reviewAuthor: "Kuleta Customer",
     },
   },
@@ -359,7 +359,7 @@ export const DEFAULT_COLLECTION_ITEMS: CollectionSeed[] = [
     slug: "main",
     title: "Kuleta Customer",
     body:
-      "This is Emmanuel saying Kuleta changed Africa's ecommerce market",
+      "",
     sortOrder: 1,
   },
   {

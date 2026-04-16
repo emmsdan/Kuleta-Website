@@ -38,6 +38,7 @@ export type CmsCollectionItemInput = {
 
 export async function ensureCmsSeeded() {
   try {
+    return
     const singletonCount = await prisma.cmsSingleton.count();
     const collectionCount = await prisma.cmsCollectionItem.count();
 
@@ -65,7 +66,8 @@ export async function getSingleton<T>(key: string, fallback: T): Promise<T> {
       return fallback;
     }
     return record.value as T;
-  } catch {
+  } catch (e){
+    console.error(`Error fetching singleton for key "${key}":`, e);
     const seeded = DEFAULT_SINGLETONS.find((item) => item.key === key);
     if (seeded) {
       return seeded.value as T;
