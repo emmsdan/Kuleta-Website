@@ -18,6 +18,6 @@ export async function POST(
   const { collection } = await params;
   const body = await request.json();
   const item = await createCollectionItem(collection, body);
-  revalidateTag(CMS_CACHE_TAG);
+  revalidateTag(CMS_CACHE_TAG, {});
   return NextResponse.json({ item }, { status: 201 });
 }

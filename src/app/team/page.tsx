@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { Linkedin, Mail } from "lucide-react";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import { getCollection, getSingleton } from "@/lib/cms";

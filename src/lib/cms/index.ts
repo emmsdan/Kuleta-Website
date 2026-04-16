@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
-import { Prisma } from "@prisma/client";
 import { unstable_cache } from "next/cache";
+
+type InputJsonValue = string | number | boolean | InputJsonValue[] | { [key: string]: InputJsonValue } | { toJSON(): unknown };
 import { DEFAULT_COLLECTION_ITEMS, DEFAULT_SINGLETONS } from "@/lib/cms/default-content";
 
 export const CMS_CACHE_TAG = "cms";
@@ -34,7 +35,7 @@ export type CmsCollectionItemInput = {
   body?: string;
   imageUrl?: string;
   linkUrl?: string;
-  metadata?: Prisma.InputJsonValue;
+  metadata?: InputJsonValue;
   sortOrder?: number;
   isPublished?: boolean;
 };
@@ -85,7 +86,7 @@ export async function getSingleton<T>(key: string, fallback: T): Promise<T> {
   )();
 }
 
-export async function setSingleton(key: string, value: Prisma.InputJsonValue) {
+export async function setSingleton(key: string, value: InputJsonValue) {
   return prisma.cmsSingleton.upsert({
     where: { key },
     create: { key, value },

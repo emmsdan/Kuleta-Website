@@ -1,6 +1,6 @@
-import { Prisma } from "@prisma/client";
+type InputJsonValue = string | number | boolean | InputJsonValue[] | { [key: string]: InputJsonValue } | { toJSON(): unknown };
 
-type SingletonSeed = { key: string; value: Prisma.InputJsonValue };
+type SingletonSeed = { key: string; value: InputJsonValue };
 type CollectionSeed = {
   collection: string;
   slug?: string;
@@ -9,7 +9,7 @@ type CollectionSeed = {
   body?: string;
   imageUrl?: string;
   linkUrl?: string;
-  metadata?: Prisma.InputJsonValue;
+  metadata?: InputJsonValue;
   sortOrder: number;
 };
 

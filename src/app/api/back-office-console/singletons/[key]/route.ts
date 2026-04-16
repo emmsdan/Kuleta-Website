@@ -18,6 +18,6 @@ export async function PUT(
   const { key } = await params;
   const body = await request.json();
   const item = await setSingleton(key, body.value);
-  revalidateTag(CMS_CACHE_TAG);
+  revalidateTag(CMS_CACHE_TAG, {});
   return NextResponse.json({ item });
 }

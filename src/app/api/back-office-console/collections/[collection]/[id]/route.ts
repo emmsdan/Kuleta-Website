@@ -9,7 +9,7 @@ export async function PATCH(
   const { id } = await params;
   const body = await request.json();
   const item = await updateCollectionItem(id, body);
-  revalidateTag(CMS_CACHE_TAG);
+  revalidateTag(CMS_CACHE_TAG, {});
   return NextResponse.json({ item });
 }
 
@@ -19,6 +19,6 @@ export async function DELETE(
 ) {
   const { id } = await params;
   await deleteCollectionItem(id);
-  revalidateTag(CMS_CACHE_TAG);
+  revalidateTag(CMS_CACHE_TAG, {});
   return NextResponse.json({ success: true });
 }
