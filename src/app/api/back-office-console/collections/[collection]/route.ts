@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createCollectionItem, getCollection } from "@/lib/cms";
+import { revalidateTag } from "next/cache";
+import { createCollectionItem, getCollection, CMS_CACHE_TAG } from "@/lib/cms";
 
 export async function GET(
   _request: NextRequest,
@@ -17,5 +18,6 @@ export async function POST(
   const { collection } = await params;
   const body = await request.json();
   const item = await createCollectionItem(collection, body);
+  revalidateTag(CMS_CACHE_TAG);
   return NextResponse.json({ item }, { status: 201 });
 }
