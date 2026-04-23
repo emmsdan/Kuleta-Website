@@ -31,7 +31,7 @@ export default async function KuzaDadaPage() {
   ]);
 
 
-  const KuzaDadaVideoButtonWrapper = (await import("./KuzaDadaVideoButtonWrapper")).default;
+  const KuzaDadaVideoButtonWrapper = (await import("@/components/KuzaDada/KuzaDadaVideoButtonWrapper")).default;
 
   return (
     <div className="min-h-screen bg-white">
@@ -117,7 +117,7 @@ export default async function KuzaDadaPage() {
                 key={story.id}
                 className="bg-gradient-to-br from-gray-50 to-yellow-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <img src={story.imageUrl || ""} alt={story.title} className="w-full h-48 object-cover" />
+                <img src={story.imageUrl || ""} alt={story.title} className="w-full h-[300px] object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-1">{story.title}</h3>
                   <p className="text-sm text-[#177F00] mb-3">{story.subtitle}</p>

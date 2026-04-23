@@ -5,7 +5,7 @@ import { Hero } from "@/components/Hero";
 import { RegionCard } from "@/components/RegionCard";
 import { FeaturedProductsCarousel } from "@/components/FeaturedProductsCarousel";
 import { OurStory } from "@/components/OurStory";
-import { KuzaDada } from "@/components/KuzaDada";
+import { KuzaDada } from "@/components/KuzaDada/KuzaDada";
 import { CustomerReview } from "@/components/CustomerReview";
 import { Sponsors } from "@/components/Sponsors";
 import type { Product, Category } from "@/app/types";
@@ -60,7 +60,7 @@ export function HomePageContent({
   featuredIn,
 }: HomePageContentProps) {
   const handleAddToCart = (product: Product) => {
-    window.location.href = `${shopBaseUrl}/search?keyword=${String(product.id)}`;
+    window.location.href = product?.linkUrl || `${shopBaseUrl}/search?keyword=${String(product.id)}`;
   };
 
   return (

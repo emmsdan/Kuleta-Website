@@ -19,13 +19,14 @@ export function FeaturedProductsCarousel({
   onAddToCart,
 }: FeaturedProductsCarouselProps) {
   const sliderRef = useRef<Slider>(null);
+  const tablet = useMediaQuery("(max-width: 1024px)");
   const mobile = useMediaQuery("(max-width: 640px)");
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: mobile ? 1 : 3,
+    slidesToShow: mobile ? 1 : tablet ? 2 : 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,

@@ -36,6 +36,7 @@ export async function getProductsWithFallback(): Promise<ProductLoadResult> {
     products: records.map((item, index) => {
       const metadata = (item.metadata as {
         id?: string;
+        linkUrl?: string;
         price?: number;
         originalPrice?: number;
         discount?: number;
@@ -44,6 +45,8 @@ export async function getProductsWithFallback(): Promise<ProductLoadResult> {
       } | null) || { id: String(index + 1) };
 
       return {
+        ...item,
+        linkUrl: item?.linkUrl || metadata.linkUrl || undefined,
         id: metadata.id || String(index + 1),
         name: item.title,
         category: item.subtitle || "General",

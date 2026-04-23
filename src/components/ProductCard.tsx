@@ -12,8 +12,10 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, onAddToCart }: ProductCardProps) {
+  
   return (
     <Card className="group overflow-hidden hover:shadow-xl hover:border-[#177F00] transition-all w-full">
+
       <div className="relative aspect-square overflow-hidden bg-gray-100">
         <img
           src={
