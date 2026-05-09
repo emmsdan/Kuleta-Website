@@ -74,7 +74,7 @@ export function HomePageContent({
       />
 
       {/* Product Categories Section */}
-      <section id="categories" className="py-16 bg-gray-50">
+      <section id="categories" className="py-16 bg-gray-50 op">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl text-center mb-6">{homeContent.categoriesTitle}</h2>
           <div className="flex justify-center mb-10">
