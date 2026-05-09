@@ -1,8 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 interface KuzaDadaProps {
   imageUrl: string;
@@ -11,7 +11,11 @@ interface KuzaDadaProps {
   buttonLabel: string;
   videoUrl?: string;
 }
-  const KuzaDadaVideoButtonWrapper = (await import("@/components/KuzaDada/KuzaDadaVideoButtonWrapper")).default;
+
+const KuzaDadaVideoButtonWrapper = dynamic(
+  () => import("@/components/KuzaDada/KuzaDadaVideoButtonWrapper"),
+  { ssr: false }
+);
 
 export function KuzaDada({ imageUrl, title, description, buttonLabel, videoUrl }: KuzaDadaProps) {
   return (
