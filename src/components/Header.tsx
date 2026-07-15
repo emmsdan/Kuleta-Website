@@ -4,7 +4,8 @@ import { ShoppingCart, User, Menu, Search } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 interface NavLink {
   label: string;
@@ -20,6 +21,7 @@ interface HeaderProps {
 
 export function Header({ logoUrl, menuItems, dropdownItems, shopBaseUrl }: HeaderProps) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [openDropdown, setOpenDropdown] = useState(false);
 
   const handleSearch = () => {
     const encodedQuery = encodeURIComponent(searchQuery.trim());
@@ -29,7 +31,19 @@ export function Header({ logoUrl, menuItems, dropdownItems, shopBaseUrl }: Heade
 
     window.open(searchUrl, "_blank", "noopener,noreferrer");
   };
-  
+
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (target.closest(".relative.group")) return;
+
+    setOpenDropdown(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b backdrop-blur-sm bg-white/90">
       <div className="container mx-auto px-4">
@@ -38,34 +52,39 @@ export function Header({ logoUrl, menuItems, dropdownItems, shopBaseUrl }: Heade
           <div className="flex items-center gap-4">
             {/* Dropdown Menu */}
             <div className="relative group">
-              <button className="flex items-center gap-2 text-gray-700 hover:text-[#177F00] transition-colors p-2">
+              <button className="flex items-center gap-2 text-gray-700 hover:text-[#177F00] transition-colors p-2" onClick={() => setOpenDropdown(!openDropdown)}>
                 <Menu className="h-6 w-6" />
               </button>
-              
+
               {/* Dropdown Items */}
-              <div className="absolute left-0 top-full mt-0 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
-                {dropdownItems.map((item) => (
-                  item.path.startsWith("http") ? (
-                  <a
-                    key={item.label}
-                    href={item.path}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#177F00]/10 hover:to-[#E99C00]/10 hover:text-[#177F00] transition-colors first:rounded-t-lg last:rounded-b-lg"
-                  >
-                    {item.label}
-                  </a>
-                  ) : (
-                  <Link
-                    key={item.label}
-                    href={item.path}
-                    className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#177F00]/10 hover:to-[#E99C00]/10 hover:text-[#177F00] transition-colors first:rounded-t-lg last:rounded-b-lg"
-                  >
-                    {item.label}
-                  </Link>
-                  )
-                ))}
-              </div>
+              {openDropdown && <>
+                <div className={clsx("absolute max-sm:fixed left-0 top-full mt-0 w-48 bg-white shadow-lg rounded-lg transition-all duration-200 border border-gray-100", {
+                  "max-sm:w-full": openDropdown,
+                })}>
+                  {dropdownItems.map((item) => (
+                    item.path.startsWith("http") ? (
+                      <a
+                        key={item.label}
+                        href={item.path}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#177F00]/10 hover:to-[#E99C00]/10 hover:text-[#177F00] transition-colors first:rounded-t-lg last:rounded-b-lg"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.label}
+                        href={item.path}
+                        className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#177F00]/10 hover:to-[#E99C00]/10 hover:text-[#177F00] transition-colors first:rounded-t-lg last:rounded-b-lg"
+                      >
+                        {item.label}
+                      </Link>
+                    )
+                  ))}
+                </div>
+
+              </>}
             </div>
 
             {/* Logo */}
@@ -91,9 +110,8 @@ export function Header({ logoUrl, menuItems, dropdownItems, shopBaseUrl }: Heade
                 <Link
                   key={item.label}
                   href={item.path}
-                  className={`text-gray-700 hover:text-[#177F00] transition-colors relative pb-1 ${
-                    index === 0 ? 'after:content-[""] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gradient-to-r after:from-[#177F00] after:to-[#E99C00]' : ''
-                  }`}
+                  className={`text-gray-700 hover:text-[#177F00] transition-colors relative pb-1 ${index === 0 ? 'after:content-[""] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gradient-to-r after:from-[#177F00] after:to-[#E99C00]' : ''
+                    }`}
                 >
                   {item.label}
                 </Link>
